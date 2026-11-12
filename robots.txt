@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://exode-media.com/sitemap.xml
