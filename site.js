@@ -2,6 +2,20 @@
 (function () {
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // Les contenus restent visibles sans JavaScript et sans IntersectionObserver.
+  if (!reduce && 'IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('reveal-enter');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.home .app-card, .home .pledge, .home .band').forEach(function (item) {
+      observer.observe(item);
+    });
+  }
+
   document.querySelectorAll('[data-carousel]').forEach(function (box) {
     var track = box.querySelector('.shots-track');
     var prev = box.querySelector('.shots-nav.prev');

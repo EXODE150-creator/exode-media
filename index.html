@@ -16,8 +16,9 @@
 <meta property="og:url" content="https://exode-media.com/">
 <meta property="og:locale" content="fr_FR">
 <link rel="stylesheet" href="style.css">
+<script src="site.js" defer></script>
 </head>
-<body>
+<body class="home">
 <a class="skip" href="#contenu">Aller au contenu</a>
 
 <header class="site-header">
@@ -45,24 +46,33 @@
       </g>
       <circle class="r3" cx="200" cy="200" r="196" pathLength="100" stroke-dasharray="0.5 2"/>
     </svg>
-    <div class="wrap">
+    <div class="wrap hero-layout">
       <div class="hero-inner">
         <p class="eyebrow">Applications de bien-être</p>
-        <h1>Des applis pour aller mieux. <span class="glow">Vos données restent chez vous.</span></h1>
-        <p class="lead">EXODE conçoit des applications sur le sommeil et les habitudes de vie&nbsp;: sans compte, sans publicité, et installées directement depuis ce site.</p>
+        <h1>Un peu plus de calme.<br> <span class="glow">Un pas à la fois.</span></h1>
+        <p class="lead">Des outils pour comprendre vos nuits et accompagner vos habitudes de vie. Sans compte, sans publicité. Vos données restent chez vous.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#applis">Voir les applis</a>
+          <a class="btn btn-primary" href="#applis">Découvrir les applications <span aria-hidden="true">↗</span></a>
           <a class="btn btn-ghost" href="a-propos.html#installer">Comment les installer&nbsp;?</a>
         </div>
+        <ul class="hero-promises" aria-label="Les essentiels">
+          <li>Sans compte</li><li>Sans publicité</li><li>Données sur votre téléphone</li>
+        </ul>
       </div>
+      <a class="hero-preview" href="respire/" aria-label="Découvrir Respire, l’application disponible">
+        <span class="preview-orbit" aria-hidden="true"></span>
+        <span class="preview-caption"><span class="preview-dot" aria-hidden="true"></span> Respire · disponible</span>
+        <img class="preview-phone" src="respire/captures/sommeil.webp" width="360" height="800" alt="Aperçu du journal de sommeil de Respire" fetchpriority="high">
+        <span class="preview-note"><img src="img/respire-192.webp" width="40" height="40" alt=""><span>Votre rythme.<br><strong>Votre chemin.</strong></span><span aria-hidden="true">↗</span></span>
+      </a>
     </div>
   </section>
 
   <section class="section" id="applis" aria-labelledby="titre-applis">
     <div class="wrap">
       <div class="section-head">
-        <h2 id="titre-applis">Les applications</h2>
-        <p class="faint">2 applications · d'autres à venir</p>
+        <div><p class="eyebrow">À chacun son rythme</p><h2 id="titre-applis">Des outils pour votre quotidien</h2></div>
+        <p class="faint">Respire disponible · Dors en préparation</p>
       </div>
 
       <div class="app-grid">
@@ -82,6 +92,7 @@
             <li>iPhone (web)</li>
             <li>Hors ligne</li>
           </ul>
+          <p class="card-link">Découvrir Respire <span aria-hidden="true">↗</span></p>
           <div class="peek" aria-hidden="true">
             <img src="respire/captures/sommeil.webp" width="360" height="800" alt="" loading="lazy">
             <img src="respire/captures/sos.webp" width="360" height="800" alt="" loading="lazy">
@@ -104,6 +115,7 @@
             <li>Montre facultative</li>
             <li>En préparation</li>
           </ul>
+          <p class="card-link">Explorer le projet Dors <span aria-hidden="true">↗</span></p>
           <div class="peek" aria-hidden="true">
             <img src="dors/captures/accueil.webp" width="400" height="800" alt="" loading="lazy">
             <img src="dors/captures/bilan.webp" width="400" height="800" alt="" loading="lazy">
@@ -117,7 +129,7 @@
   <section class="section" aria-labelledby="titre-engagements">
     <div class="wrap">
       <div class="section-head">
-        <h2 id="titre-engagements">Nos engagements</h2>
+        <div><p class="eyebrow">L’essentiel, sans le superflu</p><h2 id="titre-engagements">Votre confiance, notre point de départ</h2></div>
       </div>
       <ul class="pledges">
         <li class="pledge">
