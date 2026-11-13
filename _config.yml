@@ -1,0 +1,3 @@
+# GitHub Pages : fichiers du dépôt à ne pas publier sur exode-media.com.
+exclude:
+  - AGENTS.md
