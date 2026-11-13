@@ -287,14 +287,13 @@ p { margin: 0; }
 }
 .callout strong { color: var(--ink); }
 
-.app-body { display: grid; gap: 8px; grid-template-columns: minmax(0, 1fr); }
-.app-main, .aside { min-width: 0; }
-@media (min-width: 980px) { .app-body { grid-template-columns: minmax(0, 1fr) 320px; gap: 40px; align-items: start; } }
+.app-main { min-width: 0; }
 .app-main > section { padding: 30px 0; border-top: 1px solid var(--border); }
 .app-main > section:first-child { border-top: 0; }
 .app-main h2 { margin-bottom: 14px; }
 .app-main p + p { margin-top: 12px; }
 .app-main .intro { font-size: 1.08rem; color: var(--ink-soft); }
+.app-main > section > p, .release { max-width: 75ch; }
 
 /* Captures */
 .shots { position: relative; }
@@ -349,16 +348,24 @@ p { margin: 0; }
 .lines a { font-weight: 700; color: var(--gold); text-decoration: none; white-space: nowrap; }
 .lines a:hover { text-decoration: underline; }
 
-.aside { display: grid; gap: 16px; padding-bottom: 20px; }
-@media (min-width: 980px) { .aside { position: sticky; top: 84px; padding-top: 30px; } }
+/* Informations, en bas de la fiche */
+.info-grid {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; margin: 4px 0 0;
+  background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden;
+}
+.info-grid > div { background: var(--ground-2); padding: 14px 16px; }
+.info-grid dt { font-size: 0.82rem; color: var(--ink-faint); }
+.info-grid dd { margin: 3px 0 0; color: var(--ink); }
+@media (min-width: 760px) {
+  .info-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .info-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
 .panel { border-radius: var(--radius); border: 1px solid var(--border); background: rgba(16, 35, 49, 0.55); padding: 18px; }
-.panel h2 { font-family: var(--font-body); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--ink-faint); margin-bottom: 12px; }
-.panel dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 9px 14px; font-size: 0.94rem; }
-.panel dt { color: var(--ink-faint); }
-.panel dd { margin: 0; text-align: right; color: var(--ink); }
-.panel ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; font-size: 0.95rem; }
-.panel details summary { cursor: pointer; color: var(--ink-soft); }
-.panel details p { margin-top: 10px; font-size: 0.85rem; color: var(--ink-faint); }
+.info-more { margin-top: 16px; display: grid; gap: 14px; }
+.info-links { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px 28px; font-size: 0.95rem; }
+.info-more details { border-top: 1px solid var(--border); padding-top: 14px; }
+.info-more summary { cursor: pointer; color: var(--ink-soft); }
+.info-more details p { margin-top: 10px; font-size: 0.85rem; color: var(--ink-faint); }
 .mono { font-family: var(--font-mono); font-size: 0.78rem; word-break: break-all; color: var(--ink-soft); }
 
 /* Visionneuse */
