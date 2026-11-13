@@ -368,6 +368,26 @@ p { margin: 0; }
 .info-more details p { margin-top: 10px; font-size: 0.85rem; color: var(--ink-faint); }
 .mono { font-family: var(--font-mono); font-size: 0.78rem; word-break: break-all; color: var(--ink-soft); }
 
+/* Visite guidée (vidéo) */
+.video-frame { margin-top: 18px; aspect-ratio: 16 / 9; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); background: #061923; }
+.video-frame video { display: block; width: 100%; height: 100%; background: #061923; }
+.app-main .video-note { margin-top: 10px; }
+.video-more { margin-top: 16px; display: grid; gap: 14px; }
+.video-more > :not([hidden]) ~ :not([hidden]) { border-top: 1px solid var(--border); padding-top: 14px; }
+.video-more summary { cursor: pointer; color: var(--ink-soft); }
+.chapters { list-style: none; margin: 12px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 12px; }
+.chapters button {
+  display: flex; align-items: baseline; gap: 12px; width: 100%; padding: 7px 10px;
+  font: inherit; font-size: 0.93rem; text-align: left; color: var(--ink);
+  background: transparent; border: 1px solid transparent; border-radius: 10px; cursor: pointer;
+}
+.chapters button:hover { background: var(--surface); border-color: var(--border); }
+.chapters span { min-width: 2.6em; color: var(--accent); font-variant-numeric: tabular-nums; }
+.transcript { max-width: 75ch; margin-top: 4px; }
+.transcript h3 { font-size: 0.95rem; color: var(--ink); margin-top: 16px; }
+.transcript p { margin-top: 4px; font-size: 0.95rem; color: var(--ink-soft); }
+.app-main .video-download { margin: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
+
 /* Visionneuse */
 .lightbox { border: 0; padding: 0; background: transparent; max-width: min(92vw, 460px); max-height: 92vh; }
 .lightbox::backdrop { background: rgba(4, 12, 18, 0.86); backdrop-filter: blur(4px); }

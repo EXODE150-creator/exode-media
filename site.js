@@ -1,4 +1,4 @@
-// EXODE — vitrine : défilement des captures et visionneuse. Aucun appel réseau.
+// EXODE — vitrine : défilement des captures, visionneuse et chapitres de la vidéo. Aucun appel réseau.
 (function () {
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -36,6 +36,21 @@
     });
     dialog.addEventListener('click', function (event) {
       if (event.target === dialog || event.target.closest('[data-close]')) dialog.close();
+    });
+  }
+
+  // Visite guidée : les chapitres n'apparaissent que si ce script tourne.
+  var video = document.getElementById('video-respire');
+  var chapters = document.querySelector('.video-chapters');
+  if (video && chapters) {
+    chapters.hidden = false;
+    chapters.querySelectorAll('[data-video-time]').forEach(function (button) {
+      button.addEventListener('click', function () {
+        video.currentTime = parseFloat(button.getAttribute('data-video-time')) || 0;
+        var playing = video.play();
+        if (playing && playing.catch) playing.catch(function () {});
+        video.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+      });
     });
   }
 })();
