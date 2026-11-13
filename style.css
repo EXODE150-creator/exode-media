@@ -511,3 +511,7 @@ section[id] { scroll-margin-top: 90px; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* Compense la marge intégrée au visuel Respire, en conservant le cadre de 72 px. */
+.app-card .icon-respire { display: grid; place-items: center; overflow: hidden; }
+.icon-respire img { width: 100%; max-width: none; height: 100%; transform: scale(1.33); }
