@@ -295,6 +295,25 @@ p { margin: 0; }
 .app-main .intro { font-size: 1.08rem; color: var(--ink-soft); }
 .app-main > section > p, .release { max-width: 75ch; }
 
+/* QR codes d'installation : sur ordinateur, à la place des boutons */
+.install-scan, .install-qr { display: none; }
+.install-scan { margin: 0; font-size: 0.95rem; color: var(--ink-soft); }
+.install-qr { grid-template-columns: 1fr 1fr; gap: 12px; max-width: 420px; }
+.install-qr a {
+  display: grid; justify-items: center; gap: 10px; padding: 14px 10px 12px;
+  border-radius: var(--radius); border: 1px solid var(--border-strong); background: var(--surface);
+  color: var(--ink); text-decoration: none; text-align: center; transition: border-color 0.2s ease;
+}
+.install-qr a:hover { border-color: var(--accent); }
+.install-qr img { width: 132px; height: 132px; border-radius: 10px; }
+.install-qr b { display: block; font-size: 1rem; }
+.install-qr small { display: block; margin-top: 2px; font-size: 0.8rem; color: var(--ink-faint); }
+@media (hover: hover) and (pointer: fine) and (min-width: 820px) {
+  .install .install-buttons { display: none; }
+  .install-scan { display: block; }
+  .install-qr { display: grid; }
+}
+
 /* Captures */
 .shots { position: relative; }
 .shots-track {
