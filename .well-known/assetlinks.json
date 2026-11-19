@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.exodemultimedia.dors",
+      "sha256_cert_fingerprints": [
+        "BD:F7:73:30:B9:7E:7E:82:5A:05:50:E9:83:1D:8A:CF:BD:8A:EE:63:8B:86:12:CC:05:5B:38:4F:F5:6D:67:46"
+      ]
+    }
+  }
+]
