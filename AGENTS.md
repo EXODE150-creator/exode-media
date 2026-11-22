@@ -84,6 +84,10 @@ et ajoute l'adresse dans `sitemap.xml`.
 - L'anneau segmenté (`.halo`, SVG) est l'élément signature, repris des icônes des applis.
 - Polices système uniquement (pas de fichier de police externe).
 - Animations discrètes, désactivées si `prefers-reduced-motion`.
+- Chaque page appelle `style.css?v=AAAAMMJJ` et `site.js?v=AAAAMMJJ`. **Après toute modification
+  de `style.css` ou de `site.js`, remplace ce numéro par la date du jour dans toutes les pages**
+  (GitHub Pages laisse les navigateurs garder ces fichiers 10 minutes : sans nouveau numéro, un
+  visiteur récent verrait la nouvelle page avec l'ancien style).
 
 ## Carte d'une application sur l'accueil
 
