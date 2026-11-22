@@ -86,6 +86,7 @@ et ajoute l'adresse dans `sitemap.xml`.
 - Animations discrètes, désactivées si `prefers-reduced-motion`.
 - Chaque page appelle `style.css?v=AAAAMMJJ` et `site.js?v=AAAAMMJJ`. **Après toute modification
   de `style.css` ou de `site.js`, remplace ce numéro par la date du jour dans toutes les pages**
+  (une deuxième modification le même jour prend une lettre : `20261122b`)
   (GitHub Pages laisse les navigateurs garder ces fichiers 10 minutes : sans nouveau numéro, un
   visiteur récent verrait la nouvelle page avec l'ancien style).
 
