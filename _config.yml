@@ -1,3 +1,7 @@
 # GitHub Pages : fichiers du dépôt à ne pas publier sur exode-media.com.
 exclude:
   - AGENTS.md
+# Jekyll ignore les dossiers commençant par un point : .well-known (lien d’activation de Dors)
+# doit être publié pour qu’Android ouvre Dors depuis l’e-mail.
+include:
+  - .well-known
