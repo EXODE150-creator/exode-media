@@ -15,7 +15,7 @@
 <meta property="og:description" content="Dors, l'application sommeil d'EXODE : le bilan de vos nuits depuis votre montre, des voix guidées, un programme de six semaines. Bientôt disponible.">
 <meta property="og:url" content="https://exode-media.com/dors/">
 <meta property="og:locale" content="fr_FR">
-<link rel="stylesheet" href="../style.css?v=20261122">
+<link rel="stylesheet" href="../style.css?v=20261122b">
 </head>
 <body class="theme-dors">
 <a class="skip" href="#contenu">Aller au contenu</a>
@@ -87,6 +87,85 @@
           <li><figure><button class="shot" type="button"><img src="captures/plantes.webp" width="400" height="800" alt="Les plantes du sommeil, sans promesse miracle" loading="lazy"></button></figure></li>
         </ul>
         <button class="shots-nav next" type="button" aria-label="Captures suivantes">›</button>
+      </div>
+    </section>
+
+    <section aria-labelledby="titre-video">
+      <h2 id="titre-video">Visite guidée</h2>
+      <p class="intro">Faites le tour de Dors en 4&nbsp;min&nbsp;38&nbsp;: vos nuits avec ou sans montre, les voix guidées, le programme et vos données, sur de vrais écrans de l'appli.</p>
+      <div class="video-frame">
+        <video id="video-dors" controls playsinline preload="none" width="1920" height="1080" poster="video/dors-presentation.webp" aria-describedby="video-note">
+          <source src="video/dors-presentation.mp4" type="video/mp4">
+          <a href="video/dors-presentation.mp4">Télécharger la vidéo</a>
+        </video>
+      </div>
+      <p class="faint video-note" id="video-note">Voix de synthèse créée par IA d'après la voix de l'auteur · Sous-titres intégrés · Écrans réels, données de démonstration</p>
+      <div class="panel video-more">
+        <details class="video-chapters" hidden>
+          <summary>Aller directement à un passage</summary>
+          <ol class="chapters">
+            <li><button type="button" data-video-time="0.000"><span>0:00</span>Bienvenue dans Dors</button></li>
+            <li><button type="button" data-video-time="17.733"><span>0:17</span>Un accueil qui suit l’heure</button></li>
+            <li><button type="button" data-video-time="32.900"><span>0:32</span>Noter sa nuit en deux gestes</button></li>
+            <li><button type="button" data-video-time="51.767"><span>0:51</span>Le bilan de vos nuits</button></li>
+            <li><button type="button" data-video-time="72.367"><span>1:12</span>Quand le sommeil ne vient pas</button></li>
+            <li><button type="button" data-video-time="89.933"><span>1:29</span>Des voix guidées</button></li>
+            <li><button type="button" data-video-time="106.633"><span>1:46</span>Deux longues voix pour s’endormir</button></li>
+            <li><button type="button" data-video-time="122.367"><span>2:02</span>Des sons pour dormir</button></li>
+            <li><button type="button" data-video-time="137.233"><span>2:17</span>Ralentir le soir</button></li>
+            <li><button type="button" data-video-time="151.767"><span>2:31</span>Six semaines pour vos habitudes</button></li>
+            <li><button type="button" data-video-time="167.900"><span>2:47</span>Vos habitudes et vos nuits</button></li>
+            <li><button type="button" data-video-time="183.300"><span>3:03</span>Prendre du recul</button></li>
+            <li><button type="button" data-video-time="193.500"><span>3:13</span>Mon ciel</button></li>
+            <li><button type="button" data-video-time="206.500"><span>3:26</span>Préparer sa consultation</button></li>
+            <li><button type="button" data-video-time="220.000"><span>3:40</span>La fiche sommeil</button></li>
+            <li><button type="button" data-video-time="231.967"><span>3:51</span>S’informer honnêtement</button></li>
+            <li><button type="button" data-video-time="249.133"><span>4:09</span>Vos données restent chez vous</button></li>
+            <li><button type="button" data-video-time="261.267"><span>4:21</span>Dors, du soir au matin</button></li>
+          </ol>
+        </details>
+        <details>
+          <summary>Lire le texte de la vidéo</summary>
+          <div class="transcript">
+            <h3>Bienvenue dans Dors</h3>
+            <p>Bienvenue dans Dors. Une application pour vous accompagner du soir au matin, avec douceur et sans promesse miracle : vos nuits, avec ou sans montre, des voix pour vous endormir, et un programme pour retrouver de bonnes habitudes de sommeil. Faisons le tour, tranquillement.</p>
+            <h3>Un accueil qui suit l’heure</h3>
+            <p>L’accueil suit le moment de la journée : le matin, votre point du matin ; le soir, Je vais me coucher et le rituel. La nuit, l’écran se tamise et ne montre presque rien, ni heure ni chiffres : rien à surveiller.</p>
+            <h3>Noter sa nuit en deux gestes</h3>
+            <p>Sans montre, deux gestes suffisent : Je vais me coucher le soir, Je me lève le matin. Une seule page réunit alors votre nuit et votre ressenti, repos et énergie. Ajoutez si vous voulez vos réveils, à peu près, sans regarder l’heure la nuit : Dors en tire votre sommeil estimé.</p>
+            <h3>Le bilan de vos nuits</h3>
+            <p>Avec une montre, un bracelet ou une bague qui enregistre votre sommeil dans Health Connect, Dors lit vos nuits, en lecture seule. Chaque matin, retrouvez la frise de la nuit, chaque réveil, et les phases, léger, profond et paradoxal, quand votre montre les mesure. Une zone qu’elle n’a pas classée n’est jamais comptée comme du sommeil.</p>
+            <h3>Quand le sommeil ne vient pas</h3>
+            <p>Réveillé en pleine nuit ? Touchez Je ne dors pas, même par un appui long sur l’icône de Dors. Dites ce qui se passe, vous cogitez, un mauvais rêve : Dors vous propose quelques mots doux, ou une voix calme. Rien à réussir : posez le téléphone quand vous voulez.</p>
+            <h3>Des voix guidées</h3>
+            <p>Les voix guidées vous accompagnent sur une musique zen. C’est la voix que vous entendez en ce moment : celle de l’auteur, recréée par intelligence artificielle, en français et en anglais. Les sept séances sont enregistrées dans l’application : elles fonctionnent sans connexion, écran verrouillé.</p>
+            <h3>Deux longues voix pour s’endormir</h3>
+            <p>Deux séances d’environ vingt minutes sont faites pour s’endormir : Le corps qui s’endort, un long relâchement de la tête aux pieds, et Le chemin du soir, une promenade en pensée jusqu’à un lit qui vous attend. La voix se tait d’elle-même.</p>
+            <h3>Des sons pour dormir</h3>
+            <p>Vous préférez un son ? Bruit rose, pluie douce, vagues lentes ou bruit brun, avec une minuterie, d’un quart d’heure à toute la nuit. Le son s’éteint lentement. Gardez un volume bas, le téléphone loin de l’oreiller.</p>
+            <h3>Ralentir le soir</h3>
+            <p>Le soir, le rituel vous aide à ralentir, geste après geste. Respirer, simplement, guide une respiration lente, avec une vibration légère à chaque temps, pour la suivre les yeux fermés.</p>
+            <h3>Six semaines pour vos habitudes</h3>
+            <p>Le programme de six semaines s’inspire des principes de la thérapie cognitive et comportementale de l’insomnie, sans être une thérapie. Chaque semaine, une leçon, un geste et une voix, puis le bilan de votre semaine. Sans série à tenir, sans note.</p>
+            <h3>Vos habitudes et vos nuits</h3>
+            <p>Le journal du soir note, si vous le voulez, la caféine, l’alcool, les écrans ou le sport. Dors compare ensuite vos lendemains, avec et sans chaque habitude. Une journée non renseignée ne compte jamais comme un non.</p>
+            <h3>Prendre du recul</h3>
+            <p>Mes tendances montrent vos moyennes sur trente et quatre-vingt-dix jours, et la régularité de votre lever, avec l’écart du week-end : ce petit décalage horaire de chaque lundi.</p>
+            <h3>Mon ciel</h3>
+            <p>Chaque jour où vous prenez soin de votre sommeil, une étoile s’allume dans votre ciel, et celles d’une même semaine forment une constellation. Pas de série à perdre : un jour sans étoile n’efface rien.</p>
+            <h3>Préparer sa consultation</h3>
+            <p>Avant un rendez-vous, Préparer ma consultation vous aide à décrire vos nuits, avec six questions à cocher et vos propres questions. Dors en fait un résumé à copier, et signale les signes dont il faut parler sans attendre.</p>
+            <h3>La fiche sommeil</h3>
+            <p>La fiche sommeil en PDF est à garder ou à montrer à votre médecin : votre prochain geste utile, vos moyennes, chaque nuit en détail, et un agenda du sommeil sur quatorze jours.</p>
+            <h3>S’informer honnêtement</h3>
+            <p>Comprendre le sommeil répond aux questions fréquentes, avec leurs sources. Treize fiches disent honnêtement, d’après les sources officielles, ce que valent la valériane, la passiflore ou la mélatonine, et quand les éviter. Dors informe : il ne prescrit et ne vend rien.</p>
+            <h3>Vos données restent chez vous</h3>
+            <p>Dors n’a ni compte, ni publicité, ni traceur, ni même accès à Internet. Vos nuits restent sur votre téléphone : exportez-les, ou copiez-les automatiquement dans le dossier de votre choix.</p>
+            <h3>Dors, du soir au matin</h3>
+            <p>Dors est un outil de bien-être, pas un dispositif médical : pour un trouble du sommeil, parlez-en à un professionnel de santé. Dors sera bientôt disponible sur exode-media.com. Pour nous écrire : contact@exode-media.com.</p>
+          </div>
+        </details>
+        <p class="video-download"><a href="video/dors-presentation.mp4" download>Télécharger la vidéo</a> <span class="faint">MP4 · 20&nbsp;Mo</span></p>
       </div>
     </section>
 
@@ -165,6 +244,6 @@
     </nav>
   </div>
 </footer>
-<script src="../site.js?v=20261122"></script>
+<script src="../site.js?v=20261122b"></script>
 </body>
 </html>

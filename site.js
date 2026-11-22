@@ -39,10 +39,12 @@
     });
   }
 
-  // Visite guidée : les chapitres n'apparaissent que si ce script tourne.
-  var video = document.getElementById('video-respire');
-  var chapters = document.querySelector('.video-chapters');
-  if (video && chapters) {
+  // Visite guidée (Respire, Dors) : les chapitres n'apparaissent que si ce
+  // script tourne, et chacun mène à sa propre vidéo.
+  document.querySelectorAll('.video-frame video').forEach(function (video) {
+    var section = video.closest('section');
+    var chapters = section && section.querySelector('.video-chapters');
+    if (!chapters) return;
     chapters.hidden = false;
     chapters.querySelectorAll('[data-video-time]').forEach(function (button) {
       button.addEventListener('click', function () {
@@ -52,5 +54,5 @@
         video.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
       });
     });
-  }
+  });
 })();
