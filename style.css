@@ -105,6 +105,7 @@ p { margin: 0; }
 }
 .site-nav a:hover { color: var(--ink); background: var(--surface); }
 .site-nav a[aria-current="page"] { color: var(--ink); background: var(--surface-2); }
+@media (max-width: 639px) { .site-nav .nav-skills { display: none; } }
 @media (max-width: 479px) {
   .site-nav .nav-apps { display: none; }
   .site-nav a { padding: 8px 10px; }
@@ -175,7 +176,7 @@ p { margin: 0; }
 .app-card:focus-within { border-color: var(--accent); }
 .app-card-top { display: flex; align-items: center; gap: 16px; }
 .app-card .icon { width: 72px; height: 72px; border-radius: 22%; border: 1px solid var(--border); flex: none; }
-.app-card h3 { font-size: 1.55rem; }
+.app-card h3 { font-size: 1.55rem; padding-right: 116px; } /* place de la pastille d'état */
 .app-card h3 a { color: var(--ink); text-decoration: none; }
 .app-card h3 a::after { content: ""; position: absolute; inset: 0; z-index: 1; }
 .app-card .kind { color: var(--ink-faint); font-size: 0.9rem; margin-top: 2px; }
@@ -224,6 +225,24 @@ p { margin: 0; }
   color: var(--accent); background: rgba(0, 229, 255, 0.08); border: 1px solid rgba(0, 229, 255, 0.25);
 }
 .pictogram svg { width: 22px; height: 22px; }
+
+/* Savoir-faire */
+.skills { display: grid; gap: 14px; grid-template-columns: 1fr; list-style: none; padding: 0; margin: 0; }
+@media (min-width: 620px) { .skills { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .skills { grid-template-columns: repeat(3, 1fr); gap: 18px; } }
+.skill {
+  display: flex; flex-direction: column; gap: 8px;
+  padding: 22px; border-radius: var(--radius);
+  background: rgba(16, 35, 49, 0.6); border: 1px solid var(--border);
+}
+.skill h3 { font-family: var(--font-body); font-size: 1.05rem; font-weight: 700; margin-top: 6px; }
+.skill p { color: var(--ink-soft); font-size: 0.95rem; }
+.skill .proof { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--border); color: var(--ink-faint); font-size: 0.86rem; }
+.skill .proof a { font-weight: 600; text-decoration: none; }
+.skill .proof a:hover { color: var(--ink); text-decoration: underline; }
+
+.section[id] { scroll-margin-top: 64px; }
+.page h2[id] { scroll-margin-top: 84px; } /* sous l'en-tête fixe */
 
 .band {
   position: relative; overflow: hidden;
@@ -495,3 +514,49 @@ p { margin: 0; }
 .summary-box p { color: var(--ink-soft); }
 .summary-box strong { color: var(--ink); font-size: 1.08rem; }
 
+
+/* ---------- Univers d'applications ---------- */
+.theme-ultra {
+  --accent: #ff7a86;
+  --accent-2: #c8283a;
+}
+body.theme-ultra {
+  background:
+    radial-gradient(1200px 520px at 85% -120px, rgba(255, 90, 106, 0.10), transparent 70%),
+    radial-gradient(900px 600px at -10% 10%, rgba(196, 208, 220, 0.06), transparent 70%),
+    var(--ground);
+}
+.theme-ultra .pictogram {
+  background: color-mix(in srgb, var(--accent) 9%, transparent);
+  border-color: color-mix(in srgb, var(--accent) 30%, transparent);
+}
+.theme-ultra .callout {
+  background: color-mix(in srgb, var(--accent) 6%, transparent);
+  border-color: color-mix(in srgb, var(--accent) 26%, transparent);
+}
+
+.univers-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: -6px 0 26px; padding: 0; list-style: none; }
+.univers-nav a {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 40px;
+  padding: 6px 14px; border-radius: 999px; text-decoration: none;
+  color: var(--ink-soft); background: var(--surface); border: 1px solid var(--border);
+  font-size: 0.92rem; font-weight: 600;
+}
+.univers-nav a:hover { color: var(--ink); border-color: var(--border-strong); }
+.univers-nav .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+.univers-nav .count { color: var(--ink-faint); font-weight: 500; }
+
+.univers { scroll-margin-top: 84px; }
+.univers + .univers { margin-top: 40px; }
+.univers-head {
+  display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 14px;
+  margin-bottom: 18px; padding-bottom: 12px; border-bottom: 1px solid var(--border);
+}
+.univers-head h3 { font-size: 1.4rem; }
+.univers-head p { color: var(--ink-faint); font-size: 0.95rem; }
+
+/* Captures d'écran d'ordinateur (page d'une appli de travail) */
+.shots-wide .shots-track li { width: clamp(260px, 82vw, 560px); }
+.shots-wide .shot, .shots-wide .shot img { border-radius: 14px; }
+.lightbox-wide { max-width: min(94vw, 1280px); }
+.lightbox-wide img { border-radius: 14px; }

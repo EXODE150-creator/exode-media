@@ -46,23 +46,29 @@ L'éditeur est un particulier. Lis ces consignes en entier avant de modifier quo
 - **Santé** : Respire n'est pas un dispositif médical. Garde les avertissements et les numéros
   d'aide (39 89, 0 980 980 930, 0 800 23 13 13, 15, 112). Pas de promesse de guérison ni de
   résultat.
-- **Dors** n'est pas encore sorti : pas de bouton d'installation ni de prix.
+- **Dors** et **Ultra Services** ne sont pas encore sortis : pas de bouton d'installation ni de
+  prix.
+- **Prestations** : pas de section « savoir-faire », d'appel « Un projet ? » ni d'offre de
+  prestations à des clients tant que les mentions légales indiquent un éditeur particulier.
 
 ## Structure
 
 | Fichier | Rôle |
 |---|---|
-| `index.html` | Accueil : les applications, les engagements |
+| `index.html` | Accueil : les réalisations rangées par univers, les engagements |
 | `respire/index.html` | Fiche de Respire |
 | `respire/telecharger/` | Guide d'installation (Android, iPhone), QR codes |
 | `respire/confidentialite/` | Politique de confidentialité de Respire |
 | `dors/index.html` | Fiche de Dors (« Bientôt ») |
+| `ultra-services/index.html` | Fiche d'EXODE Ultra Services (« Bientôt ») |
 | `a-propos.html`, `contact.html`, `mentions-legales.html` | Pages communes |
 | `404.html` | Page introuvable (liens absolus depuis la racine `/`) |
 | `style.css` | Tout le style ; couleurs et polices en variables dans `:root` |
 | `site.js` | Carrousel des captures et visionneuse |
-| `img/` | Logos et icônes ; `respire/captures/`, `dors/captures/` : captures d'écran |
+| `img/` | Logos et icônes ; `<appli>/captures/` : captures d'écran |
 | `sitemap.xml`, `robots.txt` | Référencement |
+
+Nouvelle appli : ajoute sa carte à l'accueil (voir plus bas).
 
 Nouvelle page : reprends l'en-tête et le pied de page d'une page existante, liens internes
 **relatifs** (`../`, `respire/`), balises `canonical` et `og:` en `https://exode-media.com/…`,
@@ -74,9 +80,26 @@ et ajoute l'adresse dans `sitemap.xml`.
   `--teal`, `--moon`…) plutôt que de nouvelles couleurs ; réutilise les classes existantes
   (`.btn`, `.panel`, `.callout`, `.steps`…).
 - Respire : accent turquoise (`--teal`). Dors : accent bleu lune (`<body class="theme-dors">`).
+  Ultra Services : accent rouge et acier (`theme-ultra`).
 - L'anneau segmenté (`.halo`, SVG) est l'élément signature, repris des icônes des applis.
 - Polices système uniquement (pas de fichier de police externe).
 - Animations discrètes, désactivées si `prefers-reduced-motion`.
+
+## Carte d'une application sur l'accueil
+
+Toutes les applications, présentes et futures, ont **exactement la même carte que Respire**,
+quels que soient leur univers et leur plateforme (téléphone ou ordinateur). Pas de carte
+élargie ni de mise en page spéciale. Copie le bloc `<article class="app-card">` de Respire dans
+`index.html` et ne change que le contenu :
+
+- icône 72 × 72 (`img/<appli>-192.webp`), nom avec le lien vers sa page, type en quelques mots ;
+- pastille d'état en haut à droite, en un mot : « Disponible » ou « Bientôt » ;
+- description de deux ou trois lignes ;
+- trois ou quatre étiquettes courtes ;
+- trois captures d'écran de téléphone, en portrait, dans `.peek`.
+
+La carte se range dans la grille de son univers (`section.univers`) ; sa couleur passe par la
+classe de thème de l'appli sur la carte (`theme-dors`, `theme-ultra`…).
 
 ## Images
 
