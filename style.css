@@ -694,7 +694,6 @@ button:disabled { cursor: default; }
 .phone-halo { position: absolute; z-index: -1; width: 320px; height: 320px; border-radius: 50%; border: 1px solid #74f3dc18; top: 95px; left: 50%; transform: translateX(-50%); box-shadow: 0 0 0 35px #74f3dc04, 0 0 0 70px #74f3dc03; }
 .project-dors .phone-halo { border-color: #a8bcff25; box-shadow: 0 0 0 35px #a8bcff06, 0 0 0 70px #a8bcff03; }
 .phone-frame { position: relative; width: 180px; height: 384px; padding: 6px; border-radius: 29px; background: #060a0c; border: 1px solid #64747e; box-shadow: 0 28px 35px #0006; transform: rotate(-5deg); transition: transform .5s; }
-.project-dors .phone-frame { transform: rotate(5deg); }
 .phone-frame:hover, .phone-frame:focus-visible { transform: rotate(0) translateY(-5px); }
 .phone-frame img { border-radius: 23px; object-fit: cover; object-position: top; }
 .phone-selector { margin-top: 28px; }

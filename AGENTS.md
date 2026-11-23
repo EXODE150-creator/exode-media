@@ -90,21 +90,38 @@ et ajoute l'adresse dans `sitemap.xml`.
   (GitHub Pages laisse les navigateurs garder ces fichiers 10 minutes : sans nouveau numéro, un
   visiteur récent verrait la nouvelle page avec l'ancien style).
 
-## Carte d'une application sur l'accueil
+## Cartes d’applications : règle durable
 
-Toutes les applications, présentes et futures, ont **exactement la même carte que Respire**,
-quels que soient leur univers et leur plateforme (téléphone ou ordinateur). Pas de carte
-élargie ni de mise en page spéciale. Copie le bloc `<article class="app-card">` de Respire dans
-`index.html` et ne change que le contenu :
+Toutes les applications présentes et futures utilisent **exactement le même gabarit**,
+sans carte vedette ni variante ordinateur. Le modèle de référence est
+`.github/templates/application-card.html`, commun à Respire, Dors et Ultra Services.
 
-- icône 72 × 72 (`img/<appli>-192.webp`), nom avec le lien vers sa page, type en quelques mots ;
-- pastille d'état en haut à droite, en un mot : « Disponible » ou « Bientôt » ;
-- description de deux ou trois lignes ;
-- trois ou quatre étiquettes courtes ;
-- trois captures d'écran de téléphone, en portrait, dans `.peek`.
+- Ajouter chaque carte dans l’unique grille `.application-projects` de `index.html`.
+- Conserver la structure, les classes communes, les dimensions d’icône et les trois
+  boutons de captures. Seuls les textes, images, liens, identifiants, état et couleur
+  d’univers changent. Toutes les captures sont présentées dans le même téléphone.
+- Aucune dimension, typographie, marge ou transformation spécifique à une application.
+  Le style de géométrie appartient uniquement aux sélecteurs communs du gabarit.
+- Renseigner `data-availability` : `available` (Disponible), `soon` (Bientôt disponible)
+  ou `development` (En préparation). Les disponibles précèdent les prochaines sorties,
+  qui précèdent les projets en préparation.
+- Renseigner `data-priority` avec un entier positif unique pour départager les cartes
+  d’un même état. À l’ajout, prendre le prochain multiple de 10 libre, sans inventer
+  de date de sortie. Conserver cet ordre jusqu’à décision explicite de l’éditeur.
+- Ordre actuel demandé : **Respire** (`available`, 10), **Dors** (`soon`, 20),
+  **Ultra Services** (`development`, 30).
+- Trier le HTML lui-même par `(disponibilité, priorité)`, pour conserver le bon ordre
+  sans JavaScript et pour les moteurs. Le script applique aussi cette règle à l’affichage.
+- Une application devenue disponible doit changer d’état et sa carte doit être replacée
+  dans le HTML. Les priorités servent seulement à départager un même état.
+- Exécuter `python .github/scripts/audit_application_cards.py` après chaque ajout ou
+  modification. Le workflow « Cartes des applications » lance aussi ce contrôle sur
+  les propositions GitHub et les modifications de main. Il ne constitue pas une règle
+  de protection de branche : ne pas prétendre qu’une fusion est techniquement bloquée.
 
-La carte se range dans la grille de son univers (`section.univers`) ; sa couleur passe par la
-classe de thème de l'appli sur la carte (`theme-dors`, `theme-ultra`…).
+Le contrôle vérifie le gabarit de chaque carte, les trois captures, les états, les
+priorités, l’ordre source et l’absence de styles de géométrie par application.
+Une modification du gabarit doit être appliquée à **toutes** les cartes.
 
 ## Images
 

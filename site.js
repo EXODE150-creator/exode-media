@@ -1,3 +1,16 @@
+// Même ordre pour toutes les cartes : disponibilité, puis priorité éditoriale.
+(function () {
+  var ranks = { available: 0, soon: 1, development: 2 };
+  document.querySelectorAll('.application-projects').forEach(function (grid) {
+    Array.from(grid.children).filter(function (card) { return card.classList.contains('project'); })
+      .sort(function (a, b) {
+        var first = ranks[a.dataset.availability] ?? 3;
+        var second = ranks[b.dataset.availability] ?? 3;
+        return first - second || Number(a.dataset.priority) - Number(b.dataset.priority);
+      }).forEach(function (card) { grid.appendChild(card); });
+  });
+})();
+
 // EXODE — vitrine : défilement des captures, visionneuse et chapitres de la vidéo. Aucun appel réseau.
 (function () {
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
