@@ -597,9 +597,6 @@ button:disabled { cursor: default; }
 .brand { gap: 12px; text-decoration: none; color: var(--ink); flex-shrink: 0; }
 .brand > span:last-child { font-size: 1.25rem; font-weight: 800; line-height: 1; letter-spacing: .15em; }
 .brand small { display: block; font-size: .55rem; font-weight: 500; letter-spacing: .56em; margin-top: 7px; }
-.brand-orbit { position: relative; display: block; width: 38px; height: 38px; border: 2px solid var(--ink); border-radius: 50%; transform: rotate(-35deg); }
-.brand-orbit::before { content: ""; position: absolute; inset: 6px -5px; border: 2px solid var(--teal); border-radius: 50%; }
-.brand-orbit::after { content: ""; position: absolute; width: 9px; height: 9px; border-radius: 50%; background: var(--teal); top: -3px; left: 11px; box-shadow: 0 0 16px #74f3dc66; }
 .site-nav { align-items: center; gap: 10px; }
 .site-nav a { font-size: .85rem; padding: 10px 12px; }
 .site-nav .nav-contact { border: 1px solid #ffffff38; padding-inline: 20px; color: var(--ink); }
@@ -631,7 +628,6 @@ button:disabled { cursor: default; }
 .orbit-two { inset: 38px; border-color: #dcffff66; border-width: 1px 5px 1px 2px; transform: rotate(45deg) rotateY(64deg); animation: orbit-turn 17s ease-in-out infinite alternate; }
 .orbit-three { inset: -18px; border: 1px dashed #f4aa7b66; transform: rotate(-22deg) rotateY(35deg); animation: orbit-drift 45s linear infinite; }
 .orbit-core { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 192px; height: 192px; display: flex; align-items: center; justify-content: center; padding-bottom: 17px; border-radius: 50%; font-size: 10rem; font-weight: 600; letter-spacing: -.1em; line-height: 1; color: #dcfff6; background: radial-gradient(circle at 30% 20%, #3b6967, #122427 55%, #070c10); box-shadow: inset 2px 2px 3px #bafff066, inset -5px -5px 16px #000, 0 0 100px #66ffe522; text-shadow: 0 2px 25px #84ffe355; }
-.orbit-core span { color: var(--copper); font-size: 5rem; margin-left: 0; align-self: flex-end; padding-bottom: 27px; }
 .orbit-spark { position: absolute; width: 9px; height: 9px; border-radius: 50%; top: 37px; right: 56px; background: #ffd9bf; box-shadow: 0 0 25px #ffba83; }
 .floating-screen { position: absolute; width: 142px; margin: 0; padding: 6px; border: 1px solid #a5d8d344; border-radius: 25px; background: #0a1218; box-shadow: 15px 25px 50px #000a; transition: transform .5s ease-out; }
 .floating-screen img { border-radius: 19px; width: 100%; }
@@ -716,10 +712,6 @@ button:disabled { cursor: default; }
 .approach-steps p:not(.eyebrow) { color: var(--ink-soft); font-size: .9rem; margin-block: 16px; line-height: 1.8; }
 .approach-steps a { color: var(--ink-faint); font-size: .75rem; text-decoration-color: #ffffff33; }
 .precision-mark { position: relative; width: 150px; height: 150px; margin: 42px 0 0 15px; display: grid; place-items: center; }
-.precision-mark span { position: absolute; inset: 0; border-radius: 50%; border: 1px solid #74f3dc55; }
-.precision-mark span:nth-child(2) { transform: rotate(60deg) scaleX(.5); }
-.precision-mark span:nth-child(3) { transform: rotate(-60deg) scaleX(.5); }
-.precision-mark b { font-size: 3.5rem; color: var(--teal); font-weight: 500; letter-spacing: -.08em; }
 .contact-finale { position: relative; overflow: clip; padding-block: 120px; }
 .contact-finale h2 { font-size: clamp(3.6rem, 8vw, 7rem); line-height: 1; font-weight: 500; letter-spacing: -.06em; margin-top: 30px; position: relative; z-index: 1; }
 .finale-bottom { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin-top: 35px; position: relative; z-index: 1; }
@@ -782,7 +774,6 @@ button:disabled { cursor: default; }
   .screen-two { width: 130px; right: -5px; }
   .screen-one { left: 0; }
   .orbit-core { width: 160px; height: 160px; font-size: 8rem; }
-  .orbit-core span { font-size: 4rem; padding-bottom: 22px; }
   .project { padding: 26px; }
   .project-body { grid-template-columns: 1fr; gap: 32px; }
   .project-story { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 30px; align-items: start; }
@@ -799,7 +790,6 @@ button:disabled { cursor: default; }
   .site-nav a { font-size: .75rem; padding: 9px; }
   .site-nav .nav-contact { padding-inline: 12px; }
   .site-nav .nav-skills { display: none; }
-  .brand-orbit { width: 29px; height: 29px; }
   .brand > span:last-child { font-size: 1rem; }
   .brand small { font-size: .45rem; }
   .experience-hero { min-height: 0; }
@@ -861,7 +851,6 @@ button:disabled { cursor: default; }
   .screen-one { width: 100px; left: 0; }
   .screen-two { width: 112px; right: 0; }
   .orbit-core { width: 135px; height: 135px; font-size: 7rem; }
-  .orbit-core span { padding-bottom: 13px; }
   .floating-screen figcaption { font-size: .65rem; }
   .floating-screen figcaption span { font-size: .55rem; }
   .manifesto-strip .wrap { font-size: .6rem; gap: 8px; }
@@ -926,7 +915,18 @@ button:disabled { cursor: default; }
   ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
 }
 @media (max-width: 359px) {
-  .site-header .brand-orbit { display: none; }
+  .site-header .brand-emblem { width: 30px; height: 30px; }
   .site-nav a { padding-inline: 6px; }
   .site-nav .nav-contact { max-width: 90px; }
 }
+
+/* Logo Exode Média : anneau segmenté argenté et E central. */
+.brand .brand-emblem { width: 48px; height: 48px; object-fit: contain; border-radius: 50%; flex-shrink: 0; }
+.footer-emblem { width: 64px; height: 64px; object-fit: contain; border-radius: 50%; }
+.orbit-core { width: 250px; height: 250px; padding: 0; background: transparent; border-radius: 50%; box-shadow: 0 0 75px #a5b8b91a; font-size: inherit; }
+.orbit-core img { width: 100%; height: 100%; object-fit: contain; border-radius: 50%; }
+.precision-mark img { width: 100%; height: 100%; object-fit: contain; border-radius: 50%; }
+@media (max-width: 1000px) { .orbit-core { width: 210px; height: 210px; } }
+@media (max-width: 760px) { .brand .brand-emblem { width: 38px; height: 38px; } }
+@media (max-width: 420px) { .orbit-core { width: 185px; height: 185px; } }
+@media (max-width: 359px) { .site-header .brand .brand-emblem { width: 26px; height: 26px; } }
