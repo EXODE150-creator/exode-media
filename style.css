@@ -983,3 +983,6 @@ button:disabled { cursor: default; }
 .orbit-system { perspective: 1100px; z-index: 0; }
 .floating-screen { z-index: 1; }
 .orbital-stage > .orbit-core { top: 45%; z-index: 2; pointer-events: none; transform: translate(-50%, -50%); }
+@media (max-width: 760px) {
+  .screen-two figcaption { right: 26px; }
+}
