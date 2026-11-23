@@ -951,6 +951,12 @@ button:disabled { cursor: default; }
 
 /* Logos applicatifs détourés : Respire est la référence commune de proportions. */
 .app-logo { object-fit: contain; background: transparent; border: 0 !important; border-radius: 0 !important; box-shadow: none !important; }
+
+/* Respire : conserver boutons et QR codes, quel que soit le pointeur ou l’écran. */
+.install.install-with-qr .install-buttons { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.install-with-qr .install-scan { display: block; margin-top: 20px; }
+.install-with-qr .install-qr { display: grid; width: 100%; grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr)); }
+@media (max-width: 619px) { .install.install-with-qr .install-buttons { grid-template-columns: minmax(0, 1fr); } }
 .project-identity > .app-logo { width: 48px; height: 48px; }
 .app-hero .app-logo { width: 128px; height: 128px; }
 .guide-head .app-logo { width: 72px; height: 72px; }
