@@ -18,7 +18,7 @@ class CardPolicyTests(unittest.TestCase):
 
     def test_future_application_uses_same_template(self):
         card = re.search(r'      <article class="project project-ultra".*?</article>', self.html, re.S)[0]
-        future = card.replace('project-ultra', 'project-future').replace('data-priority="30"', 'data-priority="40"').replace('ultra-title', 'future-title').replace('id="batiment"', 'id="future"').replace('>Ultra Services</h3>', '>Future</h3>')
+        future = card.replace('project-ultra', 'project-future').replace('data-priority="30"', 'data-priority="40"').replace('ultra-title', 'future-title').replace('id="batiment"', 'id="future"').replace('>Service</h3>', '>Future</h3>')
         self.assertEqual([], self.check(self.html.replace(card, card+'\n'+future)))
 
     def test_wrong_order(self):

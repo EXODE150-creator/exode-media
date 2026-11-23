@@ -46,7 +46,7 @@ L'éditeur est un particulier. Lis ces consignes en entier avant de modifier quo
 - **Santé** : Respire n'est pas un dispositif médical. Garde les avertissements et les numéros
   d'aide (39 89, 0 980 980 930, 0 800 23 13 13, 15, 112). Pas de promesse de guérison ni de
   résultat.
-- **Dors** et **Ultra Services** ne sont pas encore sortis : pas de bouton d'installation ni de
+- **Dors** et **Service** ne sont pas encore sortis : pas de bouton d'installation ni de
   prix.
 - **Prestations** : pas de section « savoir-faire », d'appel « Un projet ? » ni d'offre de
   prestations à des clients tant que les mentions légales indiquent un éditeur particulier.
@@ -60,7 +60,7 @@ L'éditeur est un particulier. Lis ces consignes en entier avant de modifier quo
 | `respire/telecharger/` | Guide d'installation (Android, iPhone), QR codes |
 | `respire/confidentialite/` | Politique de confidentialité de Respire |
 | `dors/index.html` | Fiche de Dors (« Bientôt ») |
-| `ultra-services/index.html` | Fiche d'EXODE Ultra Services (« Bientôt ») |
+| `ultra-services/index.html` | Fiche de Service (« Bientôt ») |
 | `a-propos.html`, `contact.html`, `mentions-legales.html` | Pages communes |
 | `404.html` | Page introuvable (liens absolus depuis la racine `/`) |
 | `style.css` | Tout le style ; couleurs et polices en variables dans `:root` |
@@ -80,7 +80,7 @@ et ajoute l'adresse dans `sitemap.xml`.
   `--teal`, `--moon`…) plutôt que de nouvelles couleurs ; réutilise les classes existantes
   (`.btn`, `.panel`, `.callout`, `.steps`…).
 - Respire : accent turquoise (`--teal`). Dors : accent bleu lune (`<body class="theme-dors">`).
-  Ultra Services : accent rouge et acier (`theme-ultra`).
+  Service : accent rouge et acier (`theme-ultra`).
 - L'anneau segmenté (`.halo`, SVG) est l'élément signature, repris des icônes des applis.
 - Polices système uniquement (pas de fichier de police externe).
 - Animations discrètes, désactivées si `prefers-reduced-motion`.
@@ -94,7 +94,7 @@ et ajoute l'adresse dans `sitemap.xml`.
 
 Toutes les applications présentes et futures utilisent **exactement le même gabarit**,
 sans carte vedette ni variante ordinateur. Le modèle de référence est
-`.github/templates/application-card.html`, commun à Respire, Dors et Ultra Services.
+`.github/templates/application-card.html`, commun à Respire, Dors et Service.
 
 - Ajouter chaque carte dans l’unique grille `.application-projects` de `index.html`.
 - Conserver la structure, les classes communes, les dimensions d’icône et les trois
@@ -109,7 +109,7 @@ sans carte vedette ni variante ordinateur. Le modèle de référence est
   d’un même état. À l’ajout, prendre le prochain multiple de 10 libre, sans inventer
   de date de sortie. Conserver cet ordre jusqu’à décision explicite de l’éditeur.
 - Ordre actuel demandé : **Respire** (`available`, 10), **Dors** (`soon`, 20),
-  **Ultra Services** (`development`, 30).
+  **Service** (`development`, 30).
 - Trier le HTML lui-même par `(disponibilité, priorité)`, pour conserver le bon ordre
   sans JavaScript et pour les moteurs. Le script applique aussi cette règle à l’affichage.
 - Une application devenue disponible doit changer d’état et sa carte doit être replacée
@@ -126,7 +126,7 @@ Une modification du gabarit doit être appliquée à **toutes** les cartes.
 ## Logos sur le site
 
 - Référence graphique commune : anneau et finition lisse du logo Respire, sans effet
-  acier brossé. Ultra Services conserve un S central sans étoile, avec les accents rouges
+  acier brossé. Service conserve un S central sans étoile, avec les accents rouges
   à la place du bleu ; Exode Média conserve le E et les accents vert menthe.
 - Les versions actives de ces deux logos sont `ultra-s-transparent-*` et
   `exode-respire-transparent-*`. Ne pas réintroduire leurs anciennes variantes acier.
