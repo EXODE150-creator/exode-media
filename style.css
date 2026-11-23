@@ -977,3 +977,9 @@ button:disabled { cursor: default; }
 @media (max-width: 359px) {
   .site-header .brand > span:last-child { display: none; }
 }
+
+/* Le logo reste sur un plan stable, hors du contexte 3D incliné des anneaux. */
+.orbital-stage { perspective: none; transform-style: flat; isolation: isolate; }
+.orbit-system { perspective: 1100px; z-index: 0; }
+.floating-screen { z-index: 1; }
+.orbital-stage > .orbit-core { top: 45%; z-index: 2; pointer-events: none; transform: translate(-50%, -50%); }
