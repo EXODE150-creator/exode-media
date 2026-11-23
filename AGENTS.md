@@ -125,6 +125,13 @@ Une modification du gabarit doit être appliquée à **toutes** les cartes.
 
 ## Logos sur le site
 
+- Référence graphique commune : anneau et finition lisse du logo Respire, sans effet
+  acier brossé. Ultra Services conserve son symbole C/étoile, avec les accents rouges
+  à la place du bleu ; Exode Média conserve le E et les accents vert menthe.
+- Les versions actives de ces deux logos sont `ultra-respire-transparent-*` et
+  `exode-respire-transparent-*`. Ne pas réintroduire leurs anciennes variantes acier.
+
+
 - Tous les logos applicatifs utilisent une vraie transparence alpha, y compris dans
   les espaces entre segments et autour de la lettre. Pas de fond sombre incrusté.
 - Respire sert de référence de taille : même canevas carré, même diamètre visible
