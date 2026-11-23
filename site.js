@@ -1,3 +1,16 @@
+// Même ordre pour toutes les cartes : disponibilité, puis priorité éditoriale.
+(function () {
+  var ranks = { available: 0, soon: 1, development: 2 };
+  document.querySelectorAll('.application-projects').forEach(function (grid) {
+    Array.from(grid.children).filter(function (card) { return card.classList.contains('project'); })
+      .sort(function (a, b) {
+        var first = ranks[a.dataset.availability] ?? 3;
+        var second = ranks[b.dataset.availability] ?? 3;
+        return first - second || Number(a.dataset.priority) - Number(b.dataset.priority);
+      }).forEach(function (card) { grid.appendChild(card); });
+  });
+})();
+
 // EXODE — vitrine : défilement des captures, visionneuse et chapitres de la vidéo. Aucun appel réseau.
 (function () {
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -55,4 +68,128 @@
       });
     });
   });
+})();
+
+// Expérience Exode Média : interactions locales et amélioration progressive.
+(function () {
+  'use strict';
+  var root = document.documentElement;
+  var preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var motionButton = document.querySelector('.motion-control');
+  var paused = preference.matches;
+  var stage = document.querySelector('.orbital-stage');
+
+  function applyMotion() {
+    root.classList.toggle('motion-paused', paused || preference.matches);
+    if (motionButton) {
+      motionButton.hidden = preference.matches;
+      motionButton.setAttribute('aria-pressed', String(paused));
+      motionButton.textContent = paused ? 'Reprendre les animations' : 'Mettre les animations en pause';
+    }
+  }
+  if (motionButton) motionButton.addEventListener('click', function () {
+    paused = !paused;
+    applyMotion();
+  });
+  if (preference.addEventListener) preference.addEventListener('change', function () {
+    paused = preference.matches;
+    applyMotion();
+    if (paused) document.querySelectorAll('.reveal-pending').forEach(function (element) {
+      element.classList.remove('reveal-pending');
+    });
+  });
+  applyMotion();
+
+  document.addEventListener('visibilitychange', function () {
+    root.classList.toggle('document-hidden', document.hidden);
+  });
+
+  if ('IntersectionObserver' in window && !preference.matches) {
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove('reveal-pending');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.06 });
+    document.querySelectorAll('[data-reveal]').forEach(function (element) {
+      // Un élément déjà visible reste visible, même si l’observateur tarde à répondre.
+      if (element.getBoundingClientRect().top > window.innerHeight) element.classList.add('reveal-pending');
+      revealObserver.observe(element);
+    });
+  }
+
+  if (stage && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    var frame = 0;
+    stage.addEventListener('pointermove', function (event) {
+      if (paused || preference.matches || frame) return;
+      var x = event.clientX;
+      var y = event.clientY;
+      frame = window.requestAnimationFrame(function () {
+        var box = stage.getBoundingClientRect();
+        stage.style.setProperty('--tilt-x', ((y - box.top) / box.height * -12 + 6) + 'deg');
+        stage.style.setProperty('--tilt-y', ((x - box.left) / box.width * 16 - 8) + 'deg');
+        frame = 0;
+      });
+    }, { passive: true });
+    stage.addEventListener('pointerleave', function () {
+      if (frame) window.cancelAnimationFrame(frame);
+      frame = 0;
+      stage.style.setProperty('--tilt-x', '0deg');
+      stage.style.setProperty('--tilt-y', '0deg');
+    });
+  }
+
+  var zoom = document.querySelector('.showcase-lightbox');
+  var zoomImage = zoom && zoom.querySelector('img');
+  var zoomTrigger;
+  document.querySelectorAll('[data-screen-gallery]').forEach(function (gallery) {
+    var image = gallery.querySelector('[data-gallery-image]');
+    var controls = gallery.querySelectorAll('[data-screen]');
+    var caption = gallery.querySelector('.demo-caption');
+    var trigger = gallery.querySelector('[data-zoom]');
+    var request = 0;
+    if (!image) return;
+    gallery.querySelectorAll('[role="group"]').forEach(function (group) { group.hidden = false; });
+    controls.forEach(function (button) {
+      button.addEventListener('click', function () {
+        var id = ++request;
+        var preview = new Image();
+        preview.onload = function () {
+          if (id !== request) return;
+          image.src = preview.src;
+          image.alt = button.dataset.alt;
+          controls.forEach(function (control) { control.setAttribute('aria-pressed', String(control === button)); });
+          if (trigger) {
+            trigger.setAttribute('aria-label', 'Agrandir la capture : ' + button.textContent);
+            trigger.setAttribute('href', button.dataset.screen);
+          }
+          if (caption) caption.textContent = button.textContent + ' · Capture réelle, données de démonstration.';
+        };
+        preview.onerror = function () {
+          if (id === request && caption) caption.textContent = 'Cet écran n’a pas pu être chargé. La capture précédente reste disponible.';
+        };
+        preview.src = button.dataset.screen;
+      });
+    });
+    if (trigger && zoom && typeof zoom.showModal === 'function') trigger.addEventListener('click', function (event) {
+      event.preventDefault();
+      zoomTrigger = trigger;
+      zoomImage.src = image.src;
+      zoomImage.alt = image.alt;
+      zoom.querySelector('.zoom-caption').textContent = image.alt;
+      zoom.showModal();
+    });
+  });
+  if (zoom) {
+    zoom.querySelector('[data-zoom-close]').addEventListener('click', function () { zoom.close(); });
+    zoom.addEventListener('click', function (event) {
+      if (event.target === zoom) {
+        var box = zoom.getBoundingClientRect();
+        if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) zoom.close();
+      }
+    });
+    zoom.addEventListener('close', function () { if (zoomTrigger) zoomTrigger.focus(); });
+  }
 })();

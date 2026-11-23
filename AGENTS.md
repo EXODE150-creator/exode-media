@@ -46,7 +46,7 @@ L'éditeur est un particulier. Lis ces consignes en entier avant de modifier quo
 - **Santé** : Respire n'est pas un dispositif médical. Garde les avertissements et les numéros
   d'aide (39 89, 0 980 980 930, 0 800 23 13 13, 15, 112). Pas de promesse de guérison ni de
   résultat.
-- **Dors** et **Ultra Services** ne sont pas encore sortis : pas de bouton d'installation ni de
+- **Dors** et **Service** ne sont pas encore sortis : pas de bouton d'installation ni de
   prix.
 - **Prestations** : pas de section « savoir-faire », d'appel « Un projet ? » ni d'offre de
   prestations à des clients tant que les mentions légales indiquent un éditeur particulier.
@@ -60,7 +60,7 @@ L'éditeur est un particulier. Lis ces consignes en entier avant de modifier quo
 | `respire/telecharger/` | Guide d'installation (Android, iPhone), QR codes |
 | `respire/confidentialite/` | Politique de confidentialité de Respire |
 | `dors/index.html` | Fiche de Dors (« Bientôt ») |
-| `ultra-services/index.html` | Fiche d'EXODE Ultra Services (« Bientôt ») |
+| `ultra-services/index.html` | Fiche de Service (« Bientôt ») |
 | `a-propos.html`, `contact.html`, `mentions-legales.html` | Pages communes |
 | `404.html` | Page introuvable (liens absolus depuis la racine `/`) |
 | `style.css` | Tout le style ; couleurs et polices en variables dans `:root` |
@@ -80,7 +80,7 @@ et ajoute l'adresse dans `sitemap.xml`.
   `--teal`, `--moon`…) plutôt que de nouvelles couleurs ; réutilise les classes existantes
   (`.btn`, `.panel`, `.callout`, `.steps`…).
 - Respire : accent turquoise (`--teal`). Dors : accent bleu lune (`<body class="theme-dors">`).
-  Ultra Services : accent rouge et acier (`theme-ultra`).
+  Service : accent rouge et acier (`theme-ultra`).
 - L'anneau segmenté (`.halo`, SVG) est l'élément signature, repris des icônes des applis.
 - Polices système uniquement (pas de fichier de police externe).
 - Animations discrètes, désactivées si `prefers-reduced-motion`.
@@ -90,21 +90,60 @@ et ajoute l'adresse dans `sitemap.xml`.
   (GitHub Pages laisse les navigateurs garder ces fichiers 10 minutes : sans nouveau numéro, un
   visiteur récent verrait la nouvelle page avec l'ancien style).
 
-## Carte d'une application sur l'accueil
+## Cartes d’applications : règle durable
 
-Toutes les applications, présentes et futures, ont **exactement la même carte que Respire**,
-quels que soient leur univers et leur plateforme (téléphone ou ordinateur). Pas de carte
-élargie ni de mise en page spéciale. Copie le bloc `<article class="app-card">` de Respire dans
-`index.html` et ne change que le contenu :
+Toutes les applications présentes et futures utilisent **exactement le même gabarit**,
+sans carte vedette ni variante ordinateur. Le modèle de référence est
+`.github/templates/application-card.html`, commun à Respire, Dors et Service.
 
-- icône 72 × 72 (`img/<appli>-192.webp`), nom avec le lien vers sa page, type en quelques mots ;
-- pastille d'état en haut à droite, en un mot : « Disponible » ou « Bientôt » ;
-- description de deux ou trois lignes ;
-- trois ou quatre étiquettes courtes ;
-- trois captures d'écran de téléphone, en portrait, dans `.peek`.
+- Ajouter chaque carte dans l’unique grille `.application-projects` de `index.html`.
+- Conserver la structure, les classes communes, les dimensions d’icône et les trois
+  boutons de captures. Seuls les textes, images, liens, identifiants, état et couleur
+  d’univers changent. Toutes les captures sont présentées dans le même téléphone.
+- Aucune dimension, typographie, marge ou transformation spécifique à une application.
+  Le style de géométrie appartient uniquement aux sélecteurs communs du gabarit.
+- Renseigner `data-availability` : `available` (Disponible), `soon` (Bientôt disponible)
+  ou `development` (En préparation). Les disponibles précèdent les prochaines sorties,
+  qui précèdent les projets en préparation.
+- Renseigner `data-priority` avec un entier positif unique pour départager les cartes
+  d’un même état. À l’ajout, prendre le prochain multiple de 10 libre, sans inventer
+  de date de sortie. Conserver cet ordre jusqu’à décision explicite de l’éditeur.
+- Ordre actuel demandé : **Respire** (`available`, 10), **Dors** (`soon`, 20),
+  **Service** (`development`, 30).
+- Trier le HTML lui-même par `(disponibilité, priorité)`, pour conserver le bon ordre
+  sans JavaScript et pour les moteurs. Le script applique aussi cette règle à l’affichage.
+- Une application devenue disponible doit changer d’état et sa carte doit être replacée
+  dans le HTML. Les priorités servent seulement à départager un même état.
+- Exécuter `python .github/scripts/audit_application_cards.py` après chaque ajout ou
+  modification. Le workflow « Cartes des applications » lance aussi ce contrôle sur
+  les propositions GitHub et les modifications de main. Il ne constitue pas une règle
+  de protection de branche : ne pas prétendre qu’une fusion est techniquement bloquée.
 
-La carte se range dans la grille de son univers (`section.univers`) ; sa couleur passe par la
-classe de thème de l'appli sur la carte (`theme-dors`, `theme-ultra`…).
+Le contrôle vérifie le gabarit de chaque carte, les trois captures, les états, les
+priorités, l’ordre source et l’absence de styles de géométrie par application.
+Une modification du gabarit doit être appliquée à **toutes** les cartes.
+
+## Logos sur le site
+
+- Teintes demandées : contour de Service gris sombre ; contour d’Exode Média gris
+  sombre légèrement plus clair, avec son E vert menthe. Conserver les fonds transparents.
+
+
+- Référence graphique commune : anneau et finition lisse du logo Respire, sans effet
+  acier brossé. Service conserve un S central sans étoile, avec les accents rouges
+  à la place du bleu ; Exode Média conserve le E et les accents vert menthe.
+- Les versions actives de ces deux logos sont `ultra-s-transparent-*` et
+  `exode-gris-transparent-*`. Ne pas réintroduire leurs anciennes variantes acier.
+
+
+- Tous les logos applicatifs utilisent une vraie transparence alpha, y compris dans
+  les espaces entre segments et autour de la lettre. Pas de fond sombre incrusté.
+- Respire sert de référence de taille : même canevas carré, même diamètre visible
+  (76 % du canevas), mêmes dimensions CSS par emplacement pour toutes les applications.
+- Utiliser les fichiers `img/<appli>-transparent-192.webp` et `-384.webp`, avec la
+  classe commune `app-logo`. Ne pas ajouter de fond, de bordure ou de dimensions
+  spécifiques à une application. Les icônes Exode Média utilisent aussi les exports transparents.
+- Cette règle concerne le site ; les applications natives ne sont pas modifiées.
 
 ## Images
 
