@@ -15,258 +15,90 @@
 <meta property="og:description" content="EXODE conçoit des applications pour les artisans, les petites entreprises et le quotidien. Découvrez nos réalisations et échangez sur votre projet.">
 <meta property="og:url" content="https://exode-media.com/">
 <meta property="og:locale" content="fr_FR">
-<link rel="stylesheet" href="style.css?v=20261122b">
+<link rel="stylesheet" href="style.css?v=20261123">
 </head>
-<body>
+<body class="immersive-home">
 <a class="skip" href="#contenu">Aller au contenu</a>
-
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="./" aria-label="EXODE, accueil">
-      <img src="img/exode.png" srcset="img/exode.png 1x, img/exode@2x.png 2x" width="180" height="29" alt="EXODE">
-    </a>
+    <a class="brand" href="./" aria-label="Exode Média, accueil"><span class="brand-orbit" aria-hidden="true"></span><span>EXODE<small>MÉDIA</small></span></a>
     <nav class="site-nav" aria-label="Navigation principale">
-      <a class="nav-apps" href="#applis" aria-current="page">Applications</a>
-      <a class="nav-skills" href="./#savoir-faire">Savoir-faire</a>
-      <a href="a-propos.html">À propos</a>
-      <a href="contact.html">Contact</a>
+      <a href="#applis">Réalisations</a><a class="nav-skills" href="#savoir-faire">Approche</a><a href="a-propos.html">Le studio</a><a class="nav-contact" href="contact.html#projet">Parlons de votre projet</a>
     </nav>
   </div>
 </header>
-
 <main id="contenu">
-  <section class="hero">
-    <svg class="halo" viewBox="0 0 400 400" aria-hidden="true" focusable="false">
-      <g class="spin">
-        <circle class="r1" cx="200" cy="200" r="170" pathLength="100" stroke-dasharray="17 2.5 8 2.5 21 2.5 12 2.5 6 2.5 14 2.5 4.5 2.5"/>
-        <circle class="spark" cx="200" cy="200" r="170" pathLength="100" stroke-dasharray="5 95" stroke-dashoffset="-30"/>
-      </g>
-      <g class="spin-rev">
-        <circle class="r2" cx="200" cy="200" r="138" pathLength="100" stroke-dasharray="26 3 11 3 19 3 26 3 3 3"/>
-      </g>
-      <circle class="r3" cx="200" cy="200" r="196" pathLength="100" stroke-dasharray="0.5 2"/>
-    </svg>
-    <div class="wrap">
-      <div class="hero-inner">
-        <p class="eyebrow">Conception et développement d'applications</p>
-        <h1>Des applications pour votre métier. <span class="glow">Des usages concrets, des outils utiles.</span></h1>
-        <p class="lead">Artisans, petites entreprises&nbsp;: vos relevés, vos calculs et vos documents méritent un outil adapté à votre façon de travailler. EXODE conçoit des applications sur téléphone et ordinateur, avec une attention au fonctionnement hors ligne et aux données conservées sur l’appareil. Découvrez nos réalisations et parlons de votre besoin.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#applis">Voir nos réalisations</a>
-          <a class="btn btn-ghost" href="contact.html#projet">Parler de votre projet</a>
-        </div>
+  <section class="experience-hero" aria-labelledby="hero-title">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-aurora" aria-hidden="true"></div>
+    <div class="wrap hero-layout">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="live-dot" aria-hidden="true"></span> Conception · Développement · Expérience</p>
+        <h1 id="hero-title">Vos idées.<br>Notre terrain<br>de <em>création.</em></h1>
+        <p class="hero-description">Nous transformons les besoins concrets en applications qui donnent envie de s’en servir. Du chantier au quotidien, découvrez ce qu’Exode Média imagine et développe.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="#applis">Explorer nos réalisations</a><a class="text-link" href="contact.html#projet">Et si on parlait de votre idée&nbsp;?</a></div>
+      </div>
+      <div class="orbital-stage" aria-label="Composition animée autour des interfaces de nos applications">
+        <div class="orbit-system" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div><div class="orbit-core">e<span>.</span></div><div class="orbit-spark"></div></div>
+        <figure class="floating-screen screen-one"><img src="respire/captures/sommeil.webp" width="360" height="800" alt="Respire : journal et suivi du sommeil" fetchpriority="high"><figcaption>Respire <span>Le quotidien, à votre rythme.</span></figcaption></figure>
+        <figure class="floating-screen screen-two"><img src="ultra-services/captures/tel-chantiers.webp" width="360" height="800" alt="Ultra Services : dossiers de chantier sur téléphone"><figcaption>Ultra Services <span>Le terrain, autrement.</span></figcaption></figure>
+        <span class="stage-coordinate coordinate-top" aria-hidden="true">L’IDÉE PREND FORME</span><span class="stage-coordinate coordinate-bottom" aria-hidden="true">DESIGN × CODE × USAGES</span>
       </div>
     </div>
+    <div class="wrap hero-bottom"><a href="#applis" class="scroll-cue"><span aria-hidden="true"></span>La suite se découvre</a><button class="motion-control" type="button" aria-pressed="false" hidden>Mettre les animations en pause</button><span class="hero-note">Indépendant. Concret. Exode.</span></div>
   </section>
 
-  <section class="section" id="applis" aria-labelledby="titre-applis">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 id="titre-applis">Nos réalisations</h2>
-        <p class="faint">Respire disponible · Dors et Ultra Services en préparation</p>
-      </div>
+  <div class="manifesto-strip" aria-label="Notre démarche"><div class="wrap"><span>Imaginer juste.</span><span class="strip-star" aria-hidden="true">✳</span><span>Concevoir avec soin.</span><span class="strip-star" aria-hidden="true">✳</span><span>Donner vie.</span></div></div>
 
-      <ul class="univers-nav" aria-label="Univers">
-        <li><a href="#bien-etre"><span class="dot" aria-hidden="true"></span>Bien-être <span class="count">2</span></a></li>
-        <li class="theme-ultra"><a href="#batiment"><span class="dot" aria-hidden="true"></span>Métiers du bâtiment <span class="count">1</span></a></li>
-      </ul>
+  <section class="work-section wrap" id="applis" aria-labelledby="work-title">
+    <div class="editorial-heading" data-reveal><p class="eyebrow">Les réalisations</p><h2 id="work-title">Des univers différents.<br>La même <em>exigence.</em></h2><p>Du bien-être aux métiers du bâtiment, chaque application part d’un usage réel. Explorez les interfaces et découvrez le travail derrière l’écran.</p></div>
 
-      <section class="univers" id="bien-etre" aria-labelledby="titre-bien-etre">
-      <div class="univers-head">
-        <h3 id="titre-bien-etre">Bien-être</h3>
-        <p>Sommeil et habitudes de vie, à votre rythme.</p>
-      </div>
-      <div class="app-grid">
-        <article class="app-card">
-          <div class="app-card-top">
-            <img class="icon" src="img/respire-192.webp" width="72" height="72" alt="">
-            <div>
-              <h3><a href="respire/">Respire</a></h3>
-              <p class="kind">Sommeil et addictions</p>
-            </div>
-          </div>
-          <span class="status status-live go">Disponible</span>
-          <p class="desc">Sommeil, tabac, cannabis ou alcool&nbsp;: un journal pour comprendre ses nuits, des outils pour traverser les envies, sans jugement.</p>
-          <ul class="tags" aria-label="En bref">
-            <li>Gratuit</li>
-            <li>Android</li>
-            <li>iPhone (web)</li>
-            <li>Hors ligne</li>
-          </ul>
-          <div class="peek" aria-hidden="true">
-            <img src="respire/captures/sommeil.webp" width="360" height="800" alt="" loading="lazy">
-            <img src="respire/captures/sos.webp" width="360" height="800" alt="" loading="lazy">
-            <img src="respire/captures/progression.webp" width="360" height="800" alt="" loading="lazy">
-          </div>
-        </article>
+    <article class="project project-ultra" id="batiment" aria-labelledby="ultra-title" data-reveal>
+      <div class="project-intro"><div class="project-identity"><img src="img/ultra-192.webp" width="56" height="56" alt="" loading="lazy"><div><p class="eyebrow">Métiers du bâtiment</p><h3 id="ultra-title">Ultra Services</h3></div></div><span class="project-status">En préparation</span></div>
+      <div class="project-body"><div class="project-story"><p class="project-statement">Le chantier avance.<br><em>L’outil suit.</em></p><p>Des premières cotes aux fiches de débit, un même dossier pour organiser le travail. Une application pensée d’abord pour les artisans de la métallerie, sur Windows et Android.</p><ul class="project-tags" aria-label="Fonctions présentées"><li>Calculs métier</li><li>Documents PDF</li><li>Hors ligne</li></ul><a class="text-link" href="ultra-services/">Entrer dans le projet</a></div>
+      <div class="desktop-demo" data-screen-gallery>
+        <div class="device-top" aria-hidden="true"><span></span><span></span><span></span><b>EXODE / ATELIER</b></div>
+        <a class="gallery-image" aria-label="Agrandir la capture : fiche de débit" data-zoom href="ultra-services/captures/debit.webp"><img src="ultra-services/captures/debit.webp" width="1280" height="800" alt="Fiche de débit : dessin coté d’un portail et pièces repérées" loading="lazy" data-gallery-image></a>
+        <div class="gallery-controls" role="group" hidden aria-label="Choisir un écran d’Ultra Services"><button type="button" aria-pressed="true" data-screen="ultra-services/captures/debit.webp" data-alt="Fiche de débit : dessin coté d’un portail et pièces repérées">Fiche de débit</button><button type="button" aria-pressed="false" data-screen="ultra-services/captures/chiffrage.webp" data-alt="Écran de chiffrage d’Ultra Services avec les lignes du devis">Chiffrage</button><button type="button" aria-pressed="false" data-screen="ultra-services/captures/chantiers.webp" data-alt="Tableau des dossiers de chantier dans Ultra Services">Chantiers</button></div>
+        <p class="demo-caption" aria-live="polite">Fiche de débit · Capture réelle, données de démonstration. Cliquez pour agrandir.</p>
+      </div></div>
+    </article>
 
-        <article class="app-card theme-dors">
-          <div class="app-card-top">
-            <img class="icon" src="img/dors-192.webp" width="72" height="72" alt="">
-            <div>
-              <h3><a href="dors/">Dors</a></h3>
-              <p class="kind">Sommeil, avec ou sans montre</p>
-            </div>
-          </div>
-          <span class="status status-soon go">Bientôt</span>
-          <p class="desc">Le sommeil, nuit après nuit&nbsp;: le bilan de vos nuits depuis votre montre, des voix guidées et un programme de six semaines.</p>
-          <ul class="tags" aria-label="En bref">
-            <li>Android</li>
-            <li>Montre facultative</li>
-            <li>En préparation</li>
-          </ul>
-          <div class="peek" aria-hidden="true">
-            <img src="dors/captures/accueil.webp" width="400" height="800" alt="" loading="lazy">
-            <img src="dors/captures/bilan.webp" width="400" height="800" alt="" loading="lazy">
-            <img src="dors/captures/programme.webp" width="400" height="800" alt="" loading="lazy">
-          </div>
-        </article>
-      </div>
-      </section>
-
-      <section class="univers theme-ultra" id="batiment" aria-labelledby="titre-batiment">
-      <div class="univers-head">
-        <h3 id="titre-batiment">Métiers du bâtiment</h3>
-        <p>Des outils de terrain pour les artisans, du relevé à la facture.</p>
-      </div>
-      <div class="app-grid">
-        <article class="app-card theme-ultra">
-          <div class="app-card-top">
-            <img class="icon" src="img/ultra-192.webp" width="72" height="72" alt="">
-            <div>
-              <h3><a href="ultra-services/">Ultra Services</a></h3>
-              <p class="kind">Chantiers, devis et factures</p>
-            </div>
-          </div>
-          <span class="status status-soon go">Bientôt</span>
-          <p class="desc">Du premier appel à la réception&nbsp;: relevés, devis, fiches de débit et factures. Pensée d'abord pour la métallerie.</p>
-          <ul class="tags" aria-label="En bref">
-            <li>Windows</li>
-            <li>Android</li>
-            <li>Hors ligne</li>
-            <li>En préparation</li>
-          </ul>
-          <div class="peek" aria-hidden="true">
-            <img src="ultra-services/captures/tel-chantiers.webp" width="360" height="800" alt="" loading="lazy">
-            <img src="ultra-services/captures/tel-debit.webp" width="360" height="800" alt="" loading="lazy">
-            <img src="ultra-services/captures/tel-metiers.webp" width="360" height="800" alt="" loading="lazy">
-          </div>
-        </article>
-      </div>
-      </section>
+    <div class="wellbeing-projects" id="bien-etre">
+      <article class="project project-respire" aria-labelledby="respire-title" data-reveal>
+        <div class="project-intro"><div class="project-identity"><img src="img/respire-192.webp" width="56" height="56" alt="" loading="lazy"><div><p class="eyebrow">Bien-être · Android & iPhone web</p><h3 id="respire-title">Respire</h3></div></div><span class="project-status available">Disponible</span></div>
+        <p class="project-statement">Un peu de recul.<br><em>Un nouveau souffle.</em></p><p>Un journal de sommeil et des outils pour suivre ses habitudes, sans jugement. Gratuite, sans compte et sans publicité.</p>
+        <div class="phone-demo" data-screen-gallery><div class="phone-halo" aria-hidden="true"></div><a class="phone-frame gallery-image" aria-label="Agrandir la capture de Respire : sommeil" data-zoom href="respire/captures/sommeil.webp"><img src="respire/captures/sommeil.webp" width="360" height="800" alt="Journal de sommeil dans Respire" loading="lazy" data-gallery-image></a><div class="phone-selector" role="group" hidden aria-label="Choisir un écran de Respire"><button type="button" aria-pressed="true" data-screen="respire/captures/sommeil.webp" data-alt="Journal de sommeil dans Respire">Sommeil</button><button type="button" aria-pressed="false" data-screen="respire/captures/sos.webp" data-alt="Outils SOS dans Respire pour traverser une envie">SOS</button><button type="button" aria-pressed="false" data-screen="respire/captures/progression.webp" data-alt="Suivi de la progression dans Respire">Progression</button></div><p class="demo-caption" aria-live="polite">Sommeil · Capture réelle de Respire.</p></div>
+        <a class="text-link" href="respire/">Découvrir Respire</a>
+      </article>
+      <article class="project project-dors" aria-labelledby="dors-title" data-reveal>
+        <div class="project-intro"><div class="project-identity"><img src="img/dors-192.webp" width="56" height="56" alt="" loading="lazy"><div><p class="eyebrow">Sommeil · Android</p><h3 id="dors-title">Dors</h3></div></div><span class="project-status">En préparation</span></div>
+        <p class="project-statement">La nuit s’apaise.<br><em>Le design aussi.</em></p><p>Un suivi des nuits avec ou sans montre, des voix guidées et un programme de six semaines. Une interface pensée pour les moments calmes.</p>
+        <div class="phone-demo" data-screen-gallery><div class="phone-halo" aria-hidden="true"></div><a class="phone-frame gallery-image" aria-label="Agrandir la capture de Dors : accueil" data-zoom href="dors/captures/accueil.webp"><img src="dors/captures/accueil.webp" width="400" height="800" alt="Écran d’accueil de Dors" loading="lazy" data-gallery-image></a><div class="phone-selector" role="group" hidden aria-label="Choisir un écran de Dors"><button type="button" aria-pressed="true" data-screen="dors/captures/accueil.webp" data-alt="Écran d’accueil de Dors">Accueil</button><button type="button" aria-pressed="false" data-screen="dors/captures/bilan.webp" data-alt="Bilan des nuits dans Dors">Bilan</button><button type="button" aria-pressed="false" data-screen="dors/captures/voix.webp" data-alt="Sélection des voix guidées dans Dors">Voix guidées</button></div><p class="demo-caption" aria-live="polite">Accueil · Capture réelle de Dors.</p></div>
+        <a class="text-link" href="dors/">Découvrir Dors</a>
+      </article>
     </div>
+    <p class="work-disclaimer">Nos propres réalisations, à leurs différents stades de développement. Les applications de bien-être ne sont pas des dispositifs médicaux.</p>
   </section>
 
-  <section class="section" id="savoir-faire" aria-labelledby="titre-savoir-faire">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 id="titre-savoir-faire">Des applications pensées à partir des usages</h2>
-        <p class="faint">Chaque compétence s’appuie sur une réalisation présentée ici.</p>
-      </div>
-      <ul class="skills">
-        <li class="skill">
-          <h3>Organiser le travail du chantier au bureau</h3>
-          <p>Rassembler les relevés, les photos, le chiffrage et les documents dans un même dossier. Ultra Services explore ce parcours pour les artisans, d’abord en métallerie.</p>
-          <p class="proof"><a href="ultra-services/">Découvrir Ultra Services, en préparation</a></p>
-        </li>
-        <li class="skill">
-          <h3>Intégrer les calculs et les documents du métier</h3>
-          <p>Longueurs de coupe, placement des pièces en barres, marge, TVA et documents à partager&nbsp;: des fonctions conçues autour de tâches précises, avec vérification par l’utilisateur.</p>
-          <p class="proof"><a href="ultra-services/#titre-apropos">Voir les fonctions de métallerie présentées</a></p>
-        </li>
-        <li class="skill">
-          <h3>Concevoir un suivi simple au quotidien</h3>
-          <p>Saisir un journal, retrouver son historique et consulter sa progression&nbsp;: Respire montre comment transformer des observations quotidiennes en un parcours lisible sur téléphone.</p>
-          <p class="proof"><a href="respire/">Découvrir Respire, disponible gratuitement</a></p>
-        </li>
-      </ul>
-    </div>
+  <section class="approach-section" id="savoir-faire" aria-labelledby="approach-title">
+    <div class="wrap approach-layout"><div class="approach-heading" data-reveal><p class="eyebrow">L’approche Exode Média</p><h2 id="approach-title">L’expérience<br>se joue dans<br><em>les détails.</em></h2><p>Un bel écran attire le regard. Un outil bien pensé trouve sa place dans le quotidien. Nous travaillons les deux.</p><a class="text-link" href="a-propos.html">Rencontrer notre démarche</a><div class="precision-mark" aria-hidden="true"><span></span><span></span><span></span><b>e.</b></div></div>
+    <div class="approach-steps">
+      <article data-reveal><p class="eyebrow">Comprendre</p><h3>Partir du réel.</h3><p>Un relevé sur chantier, une information recopiée, un journal à remplir. Nous partons d’une tâche et de ses contraintes avant de dessiner l’interface.</p><a href="ultra-services/#titre-apropos">Le parcours métier d’Ultra Services</a></article>
+      <article data-reveal><p class="eyebrow">Concevoir</p><h3>Rendre l’usage évident.</h3><p>Hiérarchie, lisibilité, gestes et retours visuels&nbsp;: chaque écran doit aider à comprendre ce qui compte et ce qu’il est possible de faire.</p><a href="respire/#titre-captures">Les interfaces de Respire</a></article>
+      <article data-reveal><p class="eyebrow">Développer</p><h3>Relier le visible à l’utile.</h3><p>Calculs métier, documents, historique et stockage local. Le travail continue derrière l’écran pour donner du sens à chaque interaction.</p><a href="ultra-services/">Les fonctions d’Ultra Services</a></article>
+      <article data-reveal><p class="eyebrow">Respecter</p><h3>Garder l’utilisateur au centre.</h3><p>Sans publicité ni pistage. Des données conservées sur l’appareil et des exports choisis par l’utilisateur&nbsp;: ce sont les principes de nos applications.</p><a href="a-propos.html">Nos principes de conception</a></article>
+    </div></div>
   </section>
 
-  <section class="section" id="projet" aria-labelledby="titre-projet">
-    <div class="wrap">
-      <div class="band">
-        <div>
-          <p class="eyebrow">Votre besoin</p>
-          <h2 id="titre-projet">Un tableur qui atteint ses limites&nbsp;? Une tâche à simplifier&nbsp;?</h2>
-          <p>Des cotes recopiées entre le chantier et l’atelier, un calcul refait pour chaque devis, des informations dispersées dans plusieurs fichiers… Décrivez une situation concrète. Nous pourrons échanger sur ce qu’une application devrait permettre de faire.</p>
-        </div>
-        <a class="btn btn-primary" href="contact.html#projet">Décrire votre besoin</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="titre-engagements">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 id="titre-engagements">Nos engagements</h2>
-      </div>
-      <ul class="pledges">
-        <li class="pledge">
-          <span class="pictogram" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/><path d="M3 3l18 18"/></svg>
-          </span>
-          <h3>Pas de compte</h3>
-          <p>On ouvre l'appli, c'est tout. Ni e-mail, ni mot de passe, ni identifiant.</p>
-        </li>
-        <li class="pledge">
-          <span class="pictogram" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 3l18 18"/></svg>
-          </span>
-          <h3>Pas de publicité</h3>
-          <p>Aucune régie, aucun pistage, aucune mesure d'audience dans les applis.</p>
-        </li>
-        <li class="pledge">
-          <span class="pictogram" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10 6h4"/><path d="M9.5 13.5l2 2 3.5-4"/></svg>
-          </span>
-          <h3>Vos données chez vous</h3>
-          <p>Tout reste sur votre appareil, téléphone ou ordinateur. Vous choisissez ce que vous exportez, et à qui vous l'envoyez.</p>
-        </li>
-        <li class="pledge">
-          <span class="pictogram" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 19h16"/></svg>
-          </span>
-          <h3>Installation directe</h3>
-          <p>Les applis se téléchargent ici, signées par EXODE, sans passer par un magasin d'applications.</p>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="titre-installer">
-    <div class="wrap">
-      <div class="band">
-        <svg class="halo" viewBox="0 0 400 400" aria-hidden="true" focusable="false">
-          <circle class="r1" cx="200" cy="200" r="170" pathLength="100" stroke-dasharray="17 2.5 8 2.5 21 2.5 12 2.5 6 2.5 14 2.5 4.5 2.5"/>
-          <circle class="r2" cx="200" cy="200" r="138" pathLength="100" stroke-dasharray="26 3 11 3 19 3 26 3 3 3"/>
-        </svg>
-        <div>
-          <p class="eyebrow">Sans magasin d'applications</p>
-          <h2 id="titre-installer" style="margin:10px 0 12px">Installées depuis ce site, en toute transparence</h2>
-          <p>Sur Android, le téléphone demande d'autoriser l'installation&nbsp;: c'est normal pour une appli téléchargée hors magasin. Chaque fichier est signé par EXODE et son empreinte est publiée, pour vérifier qu'il n'a pas été modifié. Sur iPhone, Respire s'ouvre dans Safari. Les applis de travail s'installeront aussi sur ordinateur Windows.</p>
-        </div>
-        <a class="btn btn-ghost" href="a-propos.html#installer">Tout savoir sur l'installation</a>
-      </div>
-    </div>
+  <section class="contact-finale wrap" id="projet" aria-labelledby="contact-title" data-reveal>
+    <p class="eyebrow">La prochaine idée pourrait être la vôtre</p><h2 id="contact-title">Et si on lui<br>donnait <em>vie&nbsp;?</em></h2><div class="finale-bottom"><p>Un outil pour votre métier. Une application à imaginer. Une tâche à simplifier. Racontez-nous ce que vous avez en tête.</p><a class="btn btn-primary" href="contact.html#projet">Parlons de votre projet</a></div><span class="finale-orbit" aria-hidden="true"></span>
   </section>
 </main>
-
-<footer class="site-footer">
-  <div class="wrap">
-    <div>
-      <img src="img/exode.png" srcset="img/exode.png 1x, img/exode@2x.png 2x" width="180" height="29" alt="EXODE">
-      <p style="margin-top:10px">Des applications sans compte ni publicité.<br>© 2026 EXODE · Exode Média</p>
-    </div>
-    <nav aria-label="Pied de page">
-      <a href="respire/">Respire</a>
-      <a href="dors/">Dors</a>
-      <a href="ultra-services/">Ultra Services</a>
-      <a href="a-propos.html">À propos</a>
-      <a href="contact.html">Contact</a>
-      <a href="mentions-legales.html">Mentions légales</a>
-    </nav>
-  </div>
-</footer>
-</body>
-</html>
+<footer class="site-footer"><div class="wrap">
+  <div><a class="brand" href="./" aria-label="Exode Média, accueil"><span class="brand-orbit" aria-hidden="true"></span><span>EXODE<small>MÉDIA</small></span></a><p>Des idées aux usages.<br>© 2026 Exode Média</p></div>
+  <nav aria-label="Pied de page"><a href="respire/">Respire</a><a href="dors/">Dors</a><a href="ultra-services/">Ultra Services</a><a href="a-propos.html">Le studio</a><a href="contact.html">Contact</a><a href="mentions-legales.html">Mentions légales</a></nav>
+</div></footer>
+<dialog class="showcase-lightbox" aria-label="Capture d’application agrandie"><div class="zoom-toolbar"><p>Explorer l’interface</p><button type="button" data-zoom-close>Fermer <span aria-hidden="true">×</span></button></div><img src="" alt=""><p class="zoom-caption"></p></dialog>
+<script src="site.js?v=20261123"></script>
+</body></html>
