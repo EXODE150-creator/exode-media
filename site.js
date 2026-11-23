@@ -100,8 +100,20 @@
   });
   applyMotion();
 
-  document.addEventListener('visibilitychange', function () {
-    root.classList.toggle('document-hidden', document.hidden);
+  function syncVisibility() {
+    root.classList.toggle('document-hidden', Boolean(document.hidden));
+  }
+  document.addEventListener('visibilitychange', syncVisibility);
+  syncVisibility();
+  window.addEventListener('pageshow', function (event) {
+    // Safari peut restaurer le DOM et les classes depuis son cache de navigation.
+    syncVisibility();
+    if (event.persisted) {
+      document.querySelectorAll('.reveal-pending').forEach(function (element) {
+        element.classList.remove('reveal-pending');
+      });
+      resetTilt();
+    }
   });
 
   if ('IntersectionObserver' in window && !preference.matches) {
@@ -120,25 +132,31 @@
     });
   }
 
+  var frame = 0;
+  function resetTilt() {
+    if (frame) window.cancelAnimationFrame(frame);
+    frame = 0;
+    if (stage) {
+      stage.style.setProperty('--tilt-x', '0deg');
+      stage.style.setProperty('--tilt-y', '0deg');
+    }
+  }
   if (stage && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-    var frame = 0;
     stage.addEventListener('pointermove', function (event) {
-      if (paused || preference.matches || frame) return;
+      if (event.pointerType === 'touch' || paused || preference.matches || frame) return;
       var x = event.clientX;
       var y = event.clientY;
       frame = window.requestAnimationFrame(function () {
+        frame = 0;
+        if (paused || preference.matches || document.hidden) return;
         var box = stage.getBoundingClientRect();
+        if (!box.width || !box.height) return;
         stage.style.setProperty('--tilt-x', ((y - box.top) / box.height * -12 + 6) + 'deg');
         stage.style.setProperty('--tilt-y', ((x - box.left) / box.width * 16 - 8) + 'deg');
         frame = 0;
       });
     }, { passive: true });
-    stage.addEventListener('pointerleave', function () {
-      if (frame) window.cancelAnimationFrame(frame);
-      frame = 0;
-      stage.style.setProperty('--tilt-x', '0deg');
-      stage.style.setProperty('--tilt-y', '0deg');
-    });
+    stage.addEventListener('pointerleave', resetTilt);
   }
 
   var zoom = document.querySelector('.showcase-lightbox');
