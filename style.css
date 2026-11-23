@@ -930,3 +930,22 @@ button:disabled { cursor: default; }
 @media (max-width: 760px) { .brand .brand-emblem { width: 38px; height: 38px; } }
 @media (max-width: 420px) { .orbit-core { width: 185px; height: 185px; } }
 @media (max-width: 359px) { .site-header .brand .brand-emblem { width: 26px; height: 26px; } }
+
+/* Toutes les applications utilisent exactement le même gabarit. */
+.application-projects { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 1fr; align-items: stretch; }
+.application-projects > .project { display: grid; grid-template-rows: minmax(90px, auto) minmax(100px, auto) minmax(100px, 1fr) auto auto; min-width: 0; padding: 30px; }
+.application-projects .project-intro { align-content: start; align-items: start; flex-wrap: wrap; margin-bottom: 20px; }
+.application-projects .project-statement { font-size: clamp(1.8rem, 3vw, 2.6rem); }
+.application-projects > .project > p:not(.project-statement) { margin-top: 0; }
+.application-projects .phone-demo { width: 100%; min-width: 0; }
+.application-projects .phone-frame { width: 180px; height: 384px; transform: rotate(-5deg); }
+.application-projects .phone-frame:hover, .application-projects .phone-frame:focus-visible { transform: rotate(0) translateY(-5px); }
+.application-projects .text-link { align-self: end; }
+.project-ultra .phone-halo { border-color: #f4aa7b25; box-shadow: 0 0 0 35px #f4aa7b06, 0 0 0 70px #f4aa7b03; }
+@media (max-width: 760px) {
+  .application-projects { grid-template-columns: minmax(0, 1fr); }
+  .application-projects > .project { padding: 24px; }
+  .application-projects .phone-frame { width: 190px; height: 408px; }
+}
+@media (max-width: 420px) { .application-projects > .project { padding: 20px; } }
+@media print { .application-projects { display: block; } .application-projects > .project { display: block; } }
