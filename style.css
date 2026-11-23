@@ -948,3 +948,10 @@ button:disabled { cursor: default; }
 }
 @media (max-width: 420px) { .application-projects > .project { padding: 20px; } }
 @media print { .application-projects { display: block; } .application-projects > .project { display: block; } }
+
+/* Logos applicatifs détourés : Respire est la référence commune de proportions. */
+.app-logo { object-fit: contain; background: transparent; border: 0 !important; border-radius: 0 !important; box-shadow: none !important; }
+.project-identity > .app-logo { width: 48px; height: 48px; }
+.app-hero .app-logo { width: 128px; height: 128px; }
+.guide-head .app-logo { width: 72px; height: 72px; }
+@media (max-width: 760px) { .app-hero .app-logo { width: 96px; height: 96px; } }

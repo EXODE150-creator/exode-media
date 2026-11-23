@@ -123,6 +123,17 @@ Le contrôle vérifie le gabarit de chaque carte, les trois captures, les états
 priorités, l’ordre source et l’absence de styles de géométrie par application.
 Une modification du gabarit doit être appliquée à **toutes** les cartes.
 
+## Logos sur le site
+
+- Tous les logos applicatifs utilisent une vraie transparence alpha, y compris dans
+  les espaces entre segments et autour de la lettre. Pas de fond sombre incrusté.
+- Respire sert de référence de taille : même canevas carré, même diamètre visible
+  (76 % du canevas), mêmes dimensions CSS par emplacement pour toutes les applications.
+- Utiliser les fichiers `img/<appli>-transparent-192.webp` et `-384.webp`, avec la
+  classe commune `app-logo`. Ne pas ajouter de fond, de bordure ou de dimensions
+  spécifiques à une application. Les icônes Exode Média utilisent aussi les exports transparents.
+- Cette règle concerne le site ; les applications natives ne sont pas modifiées.
+
 ## Images
 
 - Format **WebP**, poids raisonnable (moins de 200 Ko par image si possible), avec `width`,
