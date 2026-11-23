@@ -60,7 +60,7 @@ L'éditeur est un particulier. Lis ces consignes en entier avant de modifier quo
 | `respire/telecharger/` | Guide d'installation (Android, iPhone), QR codes |
 | `respire/confidentialite/` | Politique de confidentialité de Respire |
 | `dors/index.html` | Fiche de Dors (« Bientôt ») |
-| `ultra-services/index.html` | Fiche de Service (« Bientôt ») |
+| `service/index.html` | Fiche de Service (« Bientôt ») |
 | `a-propos.html`, `contact.html`, `mentions-legales.html` | Pages communes |
 | `404.html` | Page introuvable (liens absolus depuis la racine `/`) |
 | `style.css` | Tout le style ; couleurs et polices en variables dans `:root` |
