@@ -986,3 +986,35 @@ button:disabled { cursor: default; }
 @media (max-width: 760px) {
   .screen-two figcaption { right: 26px; }
 }
+
+/* Le rognage n’est pas indispensable à la visibilité si overflow:clip est absent. */
+.experience-hero { overflow: hidden; overflow: clip; }
+
+/* Mobiles/tactile : mêmes éléments, sans contexte 3D partagé ni faces masquées. */
+@media (max-width: 760px), (hover: none), (pointer: coarse) {
+  .orbital-stage .orbit-system {
+    perspective: none;
+    -webkit-perspective: none;
+    transform-style: flat;
+    -webkit-transform-style: flat;
+    transform: translate(-50%, -50%);
+    transition: none;
+  }
+  .orbital-stage .orbit, .orbital-stage > .orbit-core, .orbital-stage .floating-screen {
+    backface-visibility: visible;
+    -webkit-backface-visibility: visible;
+  }
+  .orbit-one { transform: rotate(-35deg) scaleY(.47); animation-name: orbit-mobile-one; }
+  .orbit-two { transform: rotate(45deg) scaleX(.44); animation-name: orbit-mobile-two; }
+  .orbit-three { transform: rotate(-22deg) scaleX(.82); animation-name: orbit-mobile-three; }
+  .screen-one { transform: rotate(-12deg); animation-name: screen-mobile-one; }
+  .screen-two { transform: rotate(12deg); animation-name: screen-mobile-two; }
+}
+@keyframes orbit-mobile-one { from { transform: rotate(-35deg) scaleY(.47); } to { transform: rotate(-20deg) scaleY(.34); } }
+@keyframes orbit-mobile-two { from { transform: rotate(45deg) scaleX(.44); } to { transform: rotate(65deg) scaleX(.64); } }
+@keyframes orbit-mobile-three { from { transform: rotate(-22deg) scaleX(.82); } to { transform: rotate(338deg) scaleX(.82); } }
+@keyframes screen-mobile-one { from { transform: rotate(-12deg); } to { transform: translateY(15px) rotate(-8deg); } }
+@keyframes screen-mobile-two { from { transform: rotate(12deg); } to { transform: translateY(-15px) rotate(8deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .orbital-stage .orbit, .orbital-stage .floating-screen { animation: none !important; }
+}

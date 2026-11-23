@@ -17,3 +17,5 @@ jobs:
         run: python .github/scripts/audit_application_cards.py
       - name: Vérifier les garde-fous pour les futures applications
         run: python .github/scripts/test_application_cards.py
+      - name: Vérifier les interactions et le retour du cache de navigation
+        run: node .github/scripts/test_site_interactions.cjs
