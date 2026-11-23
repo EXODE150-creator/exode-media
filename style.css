@@ -961,3 +961,19 @@ button:disabled { cursor: default; }
 .app-hero .app-logo { width: 128px; height: 128px; }
 .guide-head .app-logo { width: 72px; height: 72px; }
 @media (max-width: 760px) { .app-hero .app-logo { width: 96px; height: 96px; } }
+
+/* L’emblème Exode doit rester bien visible dans l’en-tête. */
+.site-header .wrap { height: 112px; }
+.site-header .brand .brand-emblem { width: 96px; height: 96px; }
+@media (max-width: 760px) {
+  .site-header .wrap { height: 88px; gap: 8px; }
+  .site-header .brand .brand-emblem { width: 64px; height: 64px; }
+}
+@media (max-width: 420px) {
+  .site-header .brand .brand-emblem { width: 56px; height: 56px; }
+  .site-header .brand > span:last-child { font-size: .8rem; }
+  .site-header .site-nav a { padding-inline: 6px; }
+}
+@media (max-width: 359px) {
+  .site-header .brand > span:last-child { display: none; }
+}
