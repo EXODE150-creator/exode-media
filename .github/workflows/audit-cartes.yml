@@ -19,3 +19,7 @@ jobs:
         run: python .github/scripts/test_application_cards.py
       - name: Vérifier les interactions et le retour du cache de navigation
         run: node .github/scripts/test_site_interactions.cjs
+      - name: Vérifier les liens et les métadonnées du site
+        run: python .github/scripts/audit_site.py
+      - name: Vérifier la copie de l'adresse de contact
+        run: node .github/scripts/test_contact.cjs

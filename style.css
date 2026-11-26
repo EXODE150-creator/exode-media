@@ -1,5 +1,13 @@
 /* EXODE — vitrine des applications (exode-media.com) */
 
+/* Les ajouts de l'audit réutilisent les composants et la palette du site. */
+.case-study h3:not(:first-child) { margin-top: 22px; }
+.case-study h3 + p { margin-top: 8px; }
+.contact-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.contact-card .btn { white-space: normal; overflow-wrap: anywhere; }
+.contact-card [role="status"]:empty { display: none; }
+.contact-card [data-copy-email][hidden] { display: none; }
+
 :root {
   color-scheme: dark;
   --ground: #08161f;
@@ -343,6 +351,9 @@ p { margin: 0; }
 .shots-track li { flex: 0 0 auto; width: clamp(150px, 40vw, 200px); scroll-snap-align: start; }
 .shot { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; border-radius: 18px; }
 .shot img { width: 100%; border-radius: 18px; border: 1px solid var(--border); }
+.shot img[width="360"][height="800"] { aspect-ratio: 360 / 800; }
+.shot img[width="400"][height="800"] { aspect-ratio: 400 / 800; }
+.shot img[width="1280"][height="800"] { aspect-ratio: 1280 / 800; }
 .shots-track figcaption { font-size: 0.85rem; color: var(--ink-faint); margin-top: 8px; text-align: center; }
 .shots-track figure { margin: 0; }
 .shots-nav {
@@ -1018,3 +1029,9 @@ button:disabled { cursor: default; }
 @media (prefers-reduced-motion: reduce) {
   .orbital-stage .orbit, .orbital-stage .floating-screen { animation: none !important; }
 }
+
+/* Cibles tactiles et ancres lisibles sous l'en-tête fixe. */
+.phone-selector button, .shots-nav, .lightbox [data-close], [data-zoom-close], .motion-control { min-height: 44px; min-width: 44px; }
+main [id] { scroll-margin-top: 132px; }
+@media (max-width: 760px) { main [id] { scroll-margin-top: 108px; } }
+@media (max-width: 420px) { .contact-card { min-width: 0; } .contact-card .btn { padding-inline: 16px; } }
