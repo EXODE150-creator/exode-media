@@ -1,3 +1,18 @@
+// Copier le seul contact public : aucun message ni donnée n'est envoyé.
+(function () {
+  var button = document.querySelector('[data-copy-email]');
+  var status = document.querySelector('[data-copy-status]');
+  if (!button || !status || typeof navigator === 'undefined' || !navigator.clipboard || !navigator.clipboard.writeText) return;
+  button.hidden = false;
+  button.addEventListener('click', function () {
+    navigator.clipboard.writeText('contact@exode-media.com').then(function () {
+      status.textContent = 'Adresse copiée. Collez-la dans votre messagerie.';
+    }).catch(function () {
+      status.textContent = 'La copie automatique n’est pas autorisée. Sélectionnez l’adresse contact@exode-media.com pour la copier manuellement.';
+    });
+  });
+})();
+
 // Même ordre pour toutes les cartes : disponibilité, puis priorité éditoriale.
 (function () {
   var ranks = { available: 0, soon: 1, development: 2 };
@@ -39,9 +54,11 @@
   var dialog = document.querySelector('dialog.lightbox');
   if (dialog && typeof dialog.showModal === 'function') {
     var big = dialog.querySelector('img');
+    var previousShot;
     document.querySelectorAll('.shot').forEach(function (button) {
       button.addEventListener('click', function () {
         var thumb = button.querySelector('img');
+        previousShot = button;
         big.src = thumb.getAttribute('src');
         big.alt = thumb.getAttribute('alt');
         dialog.showModal();
@@ -50,6 +67,7 @@
     dialog.addEventListener('click', function (event) {
       if (event.target === dialog || event.target.closest('[data-close]')) dialog.close();
     });
+    dialog.addEventListener('close', function () { if (previousShot) previousShot.focus(); });
   }
 
   // Visite guidée (Respire, Dors) : les chapitres n'apparaissent que si ce

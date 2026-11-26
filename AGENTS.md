@@ -4,7 +4,9 @@ Ce dépôt est la **vitrine EXODE**, publiée sur **https://exode-media.com** pa
 depuis la racine de la branche `main`. Tout ce qui arrive sur `main` est en ligne environ une
 minute plus tard : chaque modification est donc publique.
 
-L'éditeur est un particulier. Lis ces consignes en entier avant de modifier quoi que ce soit.
+Le 26 novembre 2026, l'éditeur a confirmé que l'activité d'Exode Média est désormais
+professionnelle. Les anciennes consignes réservées à un éditeur particulier sont donc
+remplacées par cette confirmation. Lis ces consignes en entier avant de modifier quoi que ce soit.
 
 ## Méthode de travail
 
@@ -23,8 +25,10 @@ L'éditeur est un particulier. Lis ces consignes en entier avant de modifier quo
   bibliothèque, iframe, vidéo intégrée, carte, bouton de réseau social, outil de mesure
   d'audience, cookie, pixel. Tout est servi depuis ce dépôt. La politique de confidentialité
   promet « aucun cookie, aucun outil de mesure d'audience ni traceur » : elle doit rester vraie.
-- Ajouter une **donnée personnelle** de l'éditeur : nom, adresse, téléphone, adresse e-mail
-  personnelle. Le seul contact public est **contact@exode-media.com**.
+- Ajouter une **donnée personnelle** de l'éditeur sans instruction explicite. Les coordonnées
+  professionnelles destinées aux mentions légales doivent être fournies ou confirmées par
+  l'éditeur ; ne jamais les déduire d'un compte ou d'un historique. Le contact e-mail public
+  reste **contact@exode-media.com**.
 - Ajouter une clé, un mot de passe, un jeton ou un fichier de signature (`.jks`, `key.properties`).
 - Ajouter un outil de construction (npm, framework, générateur) : le site est en HTML, CSS et
   JavaScript simples, sans étape de compilation.
@@ -33,9 +37,10 @@ L'éditeur est un particulier. Lis ces consignes en entier avant de modifier quo
 
 ## Ce qui doit rester exact
 
-- **Mentions légales** (`mentions-legales.html`) : éditeur particulier, à titre non
-  professionnel, coordonnées personnelles non publiées (loi LCEN). Hébergeur GitHub, Inc. ;
-  domaine chez OVH SAS. Ne change pas ce statut.
+- **Mentions légales** (`mentions-legales.html`) : activité professionnelle confirmée le
+  26 novembre 2026. Renseigner uniquement l'identité, la forme juridique, les identifiants et
+  les coordonnées publiables confirmés par l'éditeur. Ne pas publier de champs fictifs.
+  Hébergeur GitHub, Inc. ; domaine chez OVH SAS.
 - **Téléchargement de Respire** : le lien Android reste
   `https://github.com/EXODE150-creator/respire-android/releases/latest/download/Respire.apk`.
   Les numéros de version, la taille, l'empreinte SHA-256 du fichier et le certificat de
@@ -48,8 +53,8 @@ L'éditeur est un particulier. Lis ces consignes en entier avant de modifier quo
   résultat.
 - **Dors** et **Service** ne sont pas encore sortis : pas de bouton d'installation ni de
   prix.
-- **Prestations** : pas de section « savoir-faire », d'appel « Un projet ? » ni d'offre de
-  prestations à des clients tant que les mentions légales indiquent un éditeur particulier.
+- **Prestations** : le positionnement professionnel et les échanges sur un projet sont
+  autorisés. Ne pas inventer de clients, de témoignages, de résultats ou de tarifs.
 
 ## Structure
 
